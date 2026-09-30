@@ -3,7 +3,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 mkdir -p docs-site/content
-cp skills/*/SKILL.md docs-site/content/
+for skill in inspiration-intake mbk-brand-kit social-image-studio marketing-agent-studio remotion-motion-studio; do
+  cp "skills/${skill}/SKILL.md" "docs-site/content/${skill}.md"
+done
 cp skills/marketing-agent-studio/references/role-prompts.md docs-site/content/role-prompts.md
 cp README.md docs-site/content/about.md
 cp templates/brand-kit-template/SKILL.md docs-site/content/brand-kit-template.md
