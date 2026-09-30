@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marketing Studio — an expert-agent studio in a box</title>
+<meta name="description" content="Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents and gated by visual-judge QA. Packaged as 5 ZCode skills." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="mark">MS</span> Marketing Studio</div>
+    <nav><a href="#skills">Skills</a><a href="#pipeline">Pipeline</a><a href="#onboard">Onboard an app</a><a class="btn" href="docs.html?doc=about">Docs</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="pill">ZCode skills · agent-built · agent-audited</div>
+    <h1>An expert-agent marketing<br/><span class="gold">studio</span> in a box.</h1>
+    <p class="sub">Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents
+    (Campaign Director, Content Writer, Video Director, Motion Designer…), rendered at pixel-exact sizes,
+    and gated by visual-judge QA on every single asset.</p>
+    <div class="install"><code>git clone &lt;repo&gt; && cd marketing-studio && ./install.sh</code><button class="copy" onclick="copyInstall(this)">copy</button></div>
+    <div class="stats">
+      <div><b>80+</b><span>judged images shipped</span></div>
+      <div><b>18p</b><span>brand book generated</span></div>
+      <div><b>13</b><span>audit agents passed</span></div>
+      <div><b>9/10</b><span>final sign-off score</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="wrap section">
+  <h2>Five skills, one studio</h2>
+  <p class="lead">Each skill is a folder with a SKILL.md (loaded by ZCode), bundled scripts, and on-demand references. Docs render the shipped files directly — they can't drift.</p>
+  <div class="grid">
+    <a class="card" href="docs.html?doc=inspiration-intake"><div class="num">0</div><h3>inspiration-intake</h3><p>Asks the user what he's looking for, then scans the internet for current trends — before any concept lock. Writes INTAKE.md + INSPIRATION.md.</p></a>
+    <a class="card" href="docs.html?doc=mbk-brand-kit"><div class="num">1</div><h3>brand-kit</h3><p>The brand truth: exact color tokens (oklch + hex), real product facts, voice + CTA conventions, layout laws. The one file you clone per product.</p></a>
+    <a class="card" href="docs.html?doc=social-image-studio"><div class="num">2</div><h3>social-image-studio</h3><p>The image factory: payload-driven generators → pixel-exact renders (posts, stories, thumbnails, PDF pages) → visual-judge QA. Bundled render + preverify scripts.</p></a>
+    <a class="card" href="docs.html?doc=marketing-agent-studio"><div class="num">3</div><h3>marketing-agent-studio</h3><p>The orchestration playbook: which expert agent to dispatch, in what order, with what brief. Copy-paste prompts included.</p></a>
+    <a class="card" href="docs.html?doc=remotion-motion-studio"><div class="num">4</div><h3>remotion-motion-studio</h3><p>Real motion videos — never static-slide zoompan. Motion Designer spec → Motion Animator implementation → render, in a Remotion project.</p></a>
+    <a class="card alt" href="docs.html?doc=brand-kit-template"><div class="num">+</div><h3>brand-kit template</h3><p>Onboard ANY app or web app in 3 steps: copy the template, extract the app's colors and facts, scaffold. That's the whole port.</p></a>
+  </div>
+</section>
+
+<section id="pipeline" class="deep section">
+  <div class="wrap">
+    <h2>How a campaign runs</h2>
+    <div class="flow">
+      <div class="step"><span>1</span>Intake — ask the user + scan trends</div>
+      <div class="arrow">→</div>
+      <div class="step"><span>2</span>Concept lock on real calendar moments</div>
+      <div class="arrow">→</div>
+      <div class="step"><span>3</span>Agent waves — Director, Writer, Directors</div>
+      <div class="arrow">→</div>
+      <div class="step"><span>4</span>Build — images + motion videos</div>
+      <div class="arrow">→</div>
+      <div class="step"><span>5</span>Judge gate — fix loop — ship</div>
+    </div>
+    <p class="deepnote">Every asset passes a stateless visual-judge pass with evidence-based verdicts. Failing assets are grouped by root cause, fixed once, re-rendered, and re-judged. The gate is the product.</p>
+  </div>
+</section>
+
+<section id="onboard" class="wrap section">
+  <h2>Onboard any app in 3 steps</h2>
+  <div class="grid three">
+    <div class="card"><div class="num">1</div><h3>Copy the template</h3><p><code>cp -r templates/brand-kit-template skills/&lt;app&gt;-brand-kit/</code> and fill the placeholders — extract the app's exact colors from its CSS, its logo, its real facts.</p></div>
+    <div class="card"><div class="num">2</div><h3>Scaffold the workspace</h3><p><code>assets/</code> + <code>strategy/</code> + <code>images/</code> + one <code>gen_*.py</code> generator (clone patterns are in the brand kit).</p></div>
+    <div class="card"><div class="num">3</div><h3>Run the studio</h3><p>"Make 12 posts for {app} for December" — it asks what you're looking for, researches trends, builds, and judges.</p></div>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap">
+  <div><b>Marketing Studio</b> · built and audited by AI agents · v1.0</div>
+  <div class="mono"><a href="docs.html?doc=about">Docs</a> · <a href="docs.html?doc=role-prompts">Role prompts</a> · <a href="https://mrbookkeeper.com">mrbookkeeper.com</a></div>
+</div></footer>
+
+<script src="app.js"></script>
+</body>
+</html>

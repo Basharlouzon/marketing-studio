@@ -1,0 +1,5 @@
+{
+  "buildCommand": "mkdir -p docs-site/content && cp skills/*/SKILL.md docs-site/content/ && cp skills/marketing-agent-studio/references/role-prompts.md docs-site/content/role-prompts.md && cp README.md docs-site/content/about.md && cp templates/brand-kit-template/SKILL.md docs-site/content/brand-kit-template.md",
+  "outputDirectory": "docs-site",
+  "cleanUrls": true
+}

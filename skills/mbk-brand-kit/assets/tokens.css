@@ -1,0 +1,15 @@
+:root {
+  --mbk-red: oklch(0.56 0.22 27); /* Banner Red: Primary brand color. CTAs, wordmark banner, key accents, chart highlights. */
+  --mbk-redb: oklch(0.68 0.2 27); /* Banner Red Bright: Red for dark backgrounds — buttons and accents on suit navy. */
+  --mbk-gold: oklch(0.84 0.16 95); /* Pie Gold: Accent from the logo's pie chart. Big numbers, highlights, dark-mode accents. */
+  --mbk-deep: oklch(0.23 0.055 265); /* Suit Navy: Deep section background (footers, CTA, dark cards). */
+  --mbk-deep2: oklch(0.27 0.06 265); /* Suit Navy Light: Navy cards/surfaces on dark sections. */
+  --mbk-bg: oklch(0.99 0.003 265); /* Paper: Page background — near-white, cool. */
+  --mbk-sec: oklch(0.955 0.014 262); /* Paper Shade: Secondary surface, quiet panels. */
+  --mbk-ink: oklch(0.2 0.03 265); /* Ink: Primary text on light. */
+  --mbk-mut: oklch(0.5 0.025 262); /* Gray Muted: Secondary text on light. */
+  --mbk-brd: oklch(0.91 0.012 262); /* Border: Hairlines and card borders. */
+  --mbk-grn: oklch(0.57 0.14 158); /* Success Green: Complete states, checks, positive deltas. */
+  --mbk-fg: oklch(0.97 0.008 260); /* Cloud: Primary text on dark. */
+  --mbk-mutd: oklch(0.68 0.02 262); /* Gray Dark Muted: Secondary text on dark. */
+}
