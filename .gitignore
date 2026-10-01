@@ -2,5 +2,5 @@
 node_modules/
 __pycache__/
 *.pyc
-docs-site/content/
+docs-site/docs/
 .vercel
