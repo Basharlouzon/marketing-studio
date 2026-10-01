@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1120px; height:630px; overflow:hidden; }
+body { font-family:'Geist',-apple-system,sans-serif; -webkit-font-smoothing:antialiased; }
+.deep { background:
+  radial-gradient(800px 520px at 78% 18%, rgba(235,200,49,0.09), transparent 60%),
+  linear-gradient(155deg, #0a1128 0%, #101b37 60%, #0b1428 100%); }
+.grid-bg { position:absolute; inset:0;
+  background-image: linear-gradient(rgba(251,252,254,0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(251,252,254,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(1100px 700px at 50% 30%, #000 20%, transparent 80%); }
+.wrap { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+.terminal { width:860px; background:#0d1730; border:1px solid rgba(251,252,254,0.10); border-radius:14px; box-shadow:0 40px 100px rgba(0,0,0,0.5); overflow:hidden; }
+.term-head { display:flex; align-items:center; gap:8px; padding:14px 20px; background:rgba(251,252,254,0.04); border-bottom:1px solid rgba(251,252,254,0.08); }
+.term-dot { width:11px; height:11px; border-radius:50%; }
+.d1 { background:#fc5950; } .d2 { background:#ebc831; } .d3 { background:#008f56; }
+.term-title { margin-left:10px; font-family:'Geist Mono',monospace; font-size:15px; color:#9299a5; }
+.term-body { padding:22px 26px; min-height:300px; font-family:'Geist Mono',monospace; font-size:16.5px; line-height:1.85; }
+.term-line { white-space:pre; }
+.t-p { color:#ebc831; font-weight:700; } .t-c { color:#f2f5fb; } .t-m { color:#c9d2e8; }
+.t-g { color:#ebc831; font-weight:700; } .t-ok { color:#5AD8A0; font-weight:700; }
+.t-bad { color:#fc5950; font-weight:700; } .t-r { color:#fc5950; font-weight:900; }
+.term-badge { display:none; }
+body.show-badge .term-badge { display:inline-flex; margin-left:auto; }
+.term-foot { position:relative; display:flex; align-items:center; justify-content:flex-end; padding:0 26px 18px; }
+.term-badge { align-items:center; gap:10px; padding:11px 22px; border-radius:999px; border:1.5px solid #ebc831; color:#ebc831; font-family:'Geist Mono',monospace; font-size:16px; font-weight:700; background:rgba(235,200,49,0.08); transform:scale(1); }
+body.show-badge .term-badge { animation:pop 0.5s cubic-bezier(0.2,1.6,0.4,1); }
+@keyframes pop { 0% { transform:scale(0.6); } 100% { transform:scale(1); } }
+.asset { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; }
+.asset img { max-width:460px; max-height:440px; border-radius:14px; border:1px solid rgba(251,252,254,0.14); box-shadow:0 30px 80px rgba(0,0,0,0.45); }
+.asset .cap { font-family:'Geist Mono',monospace; font-size:15px; color:#9299a5; letter-spacing:0.1em; }
+.asset .cap b { color:#ebc831; }
+.hidden { display:none !important; }
+</style></head>
+<body class="deep">
+<div class="grid-bg"></div>
+<div class="wrap">
+  <div class="terminal" id="term">
+    <div class="term-head"><span class="term-dot d1"></span><span class="term-dot d2"></span><span class="term-dot d3"></span><span class="term-title">marketing-studio — zcode</span></div>
+    <div class="term-body" id="body"></div>
+    <div class="term-foot"><span class="term-badge" id="badge">✓ 9.4/10 · SHIP</span></div>
+  </div>
+  <div class="asset hidden" id="asset"><img id="assetImg" src="" alt="" /><div class="cap" id="assetCap"></div></div>
+</div>
+<script>
+const LINES = [
+  [["$ ","t-p"],["studio run --campaign q3-close","t-c"]],
+  [["  → ","t-m"],["strategy","t-g"],["        draft brief … concept locked: “Q3 Close”","t-m"]],
+  [["  → ","t-m"],["image-factory","t-g"],[" render 12 posts @ 1080×1350 … ","t-m"],["done","t-ok"]],
+  [["  → ","t-m"],["motion","t-g"],["        animate reel.mp4 (00:14) … ","t-m"],["done","t-ok"]],
+  [["  → ","t-m"],["visual-judge","t-g"],[" kv-close-q3.png … verdict ","t-m"],["7.1 — weak hierarchy","t-bad"]],
+  [["  fix ","t-r"],["      regroup root cause ×3 → re-render → re-judge","t-m"]],
+  [["  → ","t-m"],["visual-judge","t-g"],[" kv-close-q3.png … verdict ","t-m"],["9.4 — SHIP","t-ok"]],
+  [["$ ","t-p"],["12 images · 1 reel · gate ≥ 9.0 · shipped","t-c"]],
+];
+const ASSETS = [
+  ["showcase/kv-close-q3.png","kv-close-q3.png · <b>key visual</b> · 1080×1350"],
+  ["showcase/oct-10-halloween.png","oct-10 · <b>Halloween beat</b> · story"],
+  ["showcase/yt-q3.png","yt-q3.png · <b>YouTube thumbnail</b> · 1280×720"],
+  ["showcase/brand-cover.png","brand book · <b>18-page PDF</b> · A4"],
+];
+const step = parseInt(new URLSearchParams(location.search).get("step") || "0", 10);
+const body = document.getElementById("body");
+const badge = document.getElementById("badge");
+const asset = document.getElementById("asset");
+if (step < 8) {
+  const n = Math.min(step, LINES.length);
+  for (let i = 0; i < n; i++) {
+    const line = document.createElement("div");
+    line.className = "term-line";
+    for (const [t, c] of LINES[i]) {
+      const s = document.createElement("span");
+      s.className = c; s.textContent = t;
+      line.appendChild(s);
+    }
+    body.appendChild(line);
+  }
+  if (step === 7) document.body.classList.add("show-badge");
+} else {
+  document.getElementById("term").classList.add("hidden");
+  asset.classList.remove("hidden");
+  const a = ASSETS[step - 8];
+  document.getElementById("assetImg").src = a[0];
+  document.getElementById("assetCap").innerHTML = a[1];
+}
+</script></body></html>

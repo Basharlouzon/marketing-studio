@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build deps
+        run: pip install markdown pillow
+
+      - name: Build docs (pre-render SKILL.md files)
+        run: ./build-docs.sh
+
+      - name: All 8 doc pages rendered
+        run: |
+          test -f docs-site/docs/about.html
+          test -f docs-site/docs/role-prompts.html
+          test "$(ls docs-site/docs/*.html | wc -l)" -eq 8
+
+      - name: No placeholder leaks in the site
+        run: |
+          ! grep -r "git clone <" docs-site/index.html docs-site/docs/
+          ! grep -rn "sk_" skills/ README.md
+
+      - name: Preverify showcase images (dimensions / dead bands)
+        run: python3 skills/social-image-studio/scripts/preverify.py docs-site/showcase
+
+      - name: Syntax-check bundled scripts
+        run: |
+          bash -n skills/remotion-motion-studio/scripts/extract_qa_frames.sh
+          python3 -m py_compile skills/social-image-studio/scripts/preverify.py
