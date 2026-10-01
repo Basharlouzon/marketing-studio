@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Marketing Studio Docs</title>
+<meta name="description" content="An expert-agent marketing studio, packaged as ZCode skills. Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents (Camp…" />
+<meta name="theme-color" content="#fbfcfe" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marketing Studio" />
+<meta property="og:title" content="About — Marketing Studio Docs" />
+<meta property="og:description" content="An expert-agent marketing studio, packaged as ZCode skills. Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents (Camp…" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="About — Marketing Studio Docs" />
+<meta name="twitter:description" content="An expert-agent marketing studio, packaged as ZCode skills. Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents (Camp…" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="docs-body">
+<a class="skip" href="#doc">Skip to content</a>
+
+<header class="nav docs-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#showcase">Showcase</a>
+      <a href="about.html">Docs</a>
+      <a class="btn btn-gold" href="../index.html#install">Get the skills</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open docs menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="#101b37" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<button class="scrim" id="scrim" tabindex="-1" aria-hidden="true"></button>
+
+<div class="docs-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Docs">
+    <p class="side-label">Docs</p>
+    <nav class="side-list">
+      <a href="about.html" class="active" aria-current="page">About</a>
+      <a href="inspiration-intake.html">0 · inspiration-intake</a>
+      <a href="mbk-brand-kit.html">1 · brand-kit</a>
+      <a href="social-image-studio.html">2 · social-image-studio</a>
+      <a href="marketing-agent-studio.html">3 · marketing-agent-studio</a>
+      <a href="remotion-motion-studio.html">4 · remotion-motion-studio</a>
+      <a href="brand-kit-template.html">+ · brand-kit template</a>
+      <a href="role-prompts.html">· agent role prompts</a>
+    </nav>
+    <div class="side-sep" role="presentation"></div>
+    <nav class="side-list">
+      <a href="../index.html">← Back to home</a>
+      <a href="https://github.com/Basharlouzon/marketing-studio" target="_blank" rel="noopener">GitHub repo ↗</a>
+    </nav>
+  </aside>
+
+  <main class="doc" id="doc">
+    <header class="doc-head">
+      <p class="eyebrow">Marketing Studio docs</p>
+      <h1>About</h1>
+      <p class="src">Pre-rendered at build from <a href="https://github.com/Basharlouzon/marketing-studio/blob/main/README.md" target="_blank" rel="noopener"><code>README.md</code></a> — docs can't drift from the code.</p>
+    </header>
+    <h1 id="marketing-studio">Marketing Studio</h1>
+<p><strong>An expert-agent marketing studio, packaged as ZCode skills.</strong> Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents (Campaign Director, Content Writer, Video Director, Motion Designer…), rendered through a proven HTML→pixel pipeline, and gated by visual-judge QA on every asset.</p>
+<p>Provenance: every pattern in here shipped in real campaigns — 80+ judged images, an 18-page brand book, a full monthly campaign, and 3 motion-designed videos — then survived a 13-agent audit (format, accuracy, fresh-agent simulation, red-team). Final sign-off: <strong>SHIP, 9/10</strong>.</p>
+<hr />
+<h2 id="install">Install<a class="anchor" href="#install" aria-label="Link to this section">#</a></h2>
+<div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre><code class="language-bash">git clone https://github.com/Basharlouzon/marketing-studio.git &amp;&amp; cd marketing-studio
+./install.sh          # copies the 5 skills into ~/.zcode/skills/
+# restart ZCode — done.
+</code></pre></div>
+<p><code>install.sh</code> is idempotent and safe to re-run (it overwrites the five skill folders in place).</p>
+<h2 id="the-five-skills">The five skills<a class="anchor" href="#the-five-skills" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Skill</th>
+<th>Owns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/inspiration-intake/SKILL.md"><code>inspiration-intake</code></a></td>
+<td>Asks the user what he's looking for (goal / look / channels), researches the internet for current trends, writes <code>INTAKE.md</code> + <code>INSPIRATION.md</code> before any concept lock</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/mbk-brand-kit/SKILL.md"><code>mbk-brand-kit</code></a></td>
+<td>The brand truth: exact color tokens (oklch + hex), real product facts, voice + CTA conventions, layout laws. <strong>This is the per-product file you clone for a new app</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/social-image-studio/SKILL.md"><code>social-image-studio</code></a></td>
+<td>The image factory: payload-driven generators → pixel-exact rendering (posts 1080×1350, stories 1080×1920, thumbnails, PDF pages) → visual-judge QA gate. Bundles <code>render_batch.mjs</code> + <code>preverify.py</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/marketing-agent-studio/SKILL.md"><code>marketing-agent-studio</code></a></td>
+<td>The orchestration playbook: which expert agent to dispatch, in what order, with what brief (copy-paste prompts in <code>references/role-prompts.md</code>), wave limits, solo-vs-full-studio rule</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/remotion-motion-studio/SKILL.md"><code>remotion-motion-studio</code></a></td>
+<td>Real motion videos: Motion Designer spec → Motion Animator implementation → render, in a Remotion project. Bundles <code>extract_qa_frames.sh</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="how-a-campaign-runs">How a campaign runs<a class="anchor" href="#how-a-campaign-runs" aria-label="Link to this section">#</a></h2>
+<div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre><code>inspiration-intake (ask user + internet trends)
+ └─&gt; concept lock
+      ├─&gt; marketing-agent-studio  ──&gt; Campaign Director / Content Writer briefs
+      ├─&gt; social-image-studio     ──&gt; posts, stories, thumbnails, brand books
+      └─&gt; remotion-motion-studio  ──&gt; Reels / TikToks / Shorts (real motion)
+           every asset ──&gt; visual-judge gate ──&gt; fix loop ──&gt; ship
+</code></pre></div>
+<h2 id="onboard-any-app-in-3-steps">Onboard ANY app in 3 steps<a class="anchor" href="#onboard-any-app-in-3-steps" aria-label="Link to this section">#</a></h2>
+<p>The studio is product-agnostic except one file — the brand kit. To point it at a new app or web app:</p>
+<ol>
+<li><strong>Copy the template</strong>: <code>cp -r templates/brand-kit-template skills/&lt;app&gt;-brand-kit/</code> and fill every <code>{PLACEHOLDER}</code> — extract the app's exact colors from its CSS (oklch/hex), its logo files, its real product facts (never invent), its voice rules. The template walks you through it.</li>
+<li><strong>Scaffold the workspace</strong>: <code>&lt;project&gt;/assets/</code> + <code>strategy/</code> + <code>images/</code> + a <code>gen_*.py</code> generator (clone patterns live in the brand kit §8).</li>
+<li><strong>Say "make N posts for {app}"</strong> — the studio asks you what you're looking for, researches trends, and builds.</li>
+</ol>
+<p>Full walkthrough: <a href="https://github.com/Basharlouzon/marketing-studio/blob/main/templates/brand-kit-template/SKILL.md"><code>templates/brand-kit-template/SKILL.md</code></a>.</p>
+<h2 id="re-render-edit-loop">Re-render / edit loop<a class="anchor" href="#re-render-edit-loop" aria-label="Link to this section">#</a></h2>
+<p>Assets are code. Edit copy in the generator's payload file (or a skill's markdown), re-run the generator, re-render the affected files only. Commands for each medium are in the skill files (§ render sections).</p>
+<h2 id="validation">Validation<a class="anchor" href="#validation" aria-label="Link to this section">#</a></h2>
+<p>Trigger checks (each phrase must surface the named skill): "make 12 posts for December" → social-image-studio · "turn this script into a reel" → remotion-motion-studio · "plan November" → marketing-agent-studio · "is this on-brand?" → mbk-brand-kit · "something fresh" → inspiration-intake.
+Mechanical checks: <code>python3 skills/social-image-studio/scripts/preverify.py &lt;images-folder&gt;</code> · <code>bash -n skills/remotion-motion-studio/scripts/extract_qa_frames.sh</code>.</p>
+<h2 id="docs">Docs<a class="anchor" href="#docs" aria-label="Link to this section">#</a></h2>
+<p>Live docs: <strong>this repo deploys to Vercel</strong> — the docs site renders the shipped SKILL.md files directly from <code>skills/</code>, so docs can never drift from the code.</p>
+<h2 id="out-of-scope">Out of scope<a class="anchor" href="#out-of-scope" aria-label="Link to this section">#</a></h2>
+<p>Publishing/scheduling to platforms — this studio produces and QA's assets; posting is manual or a future skill.</p>
+<h2 id="repository-layout">Repository layout<a class="anchor" href="#repository-layout" aria-label="Link to this section">#</a></h2>
+<div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre><code>skills/                     # the 5 skills (source of truth)
+  &lt;name&gt;/SKILL.md           # each: frontmatter + body, loaded by ZCode
+  &lt;name&gt;/scripts/           # bundled helpers (render_batch, preverify, extract_qa_frames)
+  &lt;name&gt;/references/        # on-demand deep docs (role-prompts.md)
+  mbk-brand-kit/assets/     # tokens.json + tokens.css
+templates/brand-kit-template/   # fill-in brand kit for ANY new app
+docs-site/                  # static docs site (Vercel root)
+install.sh                  # idempotent installer → ~/.zcode/skills/
+</code></pre></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    <ul>
+      <li><a href="#install">Install</a></li>
+<li><a href="#the-five-skills">The five skills</a></li>
+<li><a href="#how-a-campaign-runs">How a campaign runs</a></li>
+<li><a href="#onboard-any-app-in-3-steps">Onboard ANY app in 3 steps</a></li>
+<li><a href="#re-render-edit-loop">Re-render / edit loop</a></li>
+<li><a href="#validation">Validation</a></li>
+<li><a href="#docs">Docs</a></li>
+<li><a href="#out-of-scope">Out of scope</a></li>
+<li><a href="#repository-layout">Repository layout</a></li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="docs-footer">
+  <b>Marketing Studio</b> · docs are pre-rendered from the shipped SKILL.md files at build time — they can't drift from the code · <span style="font-family: var(--mono); font-size: 12px;">v1.0</span>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

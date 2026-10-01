@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>remotion-motion-studio — Marketing Studio Docs</title>
+<meta name="description" content="Real choreographed motion via the proven Remotion project. Never ship static-slide zoompan as motion — it was rejected by the user (&quot;looks awful&quot;). Pipeline: M…" />
+<meta name="theme-color" content="#fbfcfe" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marketing Studio" />
+<meta property="og:title" content="remotion-motion-studio — Marketing Studio Docs" />
+<meta property="og:description" content="Real choreographed motion via the proven Remotion project. Never ship static-slide zoompan as motion — it was rejected by the user (&quot;looks awful&quot;). Pipeline: M…" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="remotion-motion-studio — Marketing Studio Docs" />
+<meta name="twitter:description" content="Real choreographed motion via the proven Remotion project. Never ship static-slide zoompan as motion — it was rejected by the user (&quot;looks awful&quot;). Pipeline: M…" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="docs-body">
+<a class="skip" href="#doc">Skip to content</a>
+
+<header class="nav docs-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#showcase">Showcase</a>
+      <a href="about.html">Docs</a>
+      <a class="btn btn-gold" href="../index.html#install">Get the skills</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open docs menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="#101b37" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<button class="scrim" id="scrim" tabindex="-1" aria-hidden="true"></button>
+
+<div class="docs-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Docs">
+    <p class="side-label">Docs</p>
+    <nav class="side-list">
+      <a href="about.html">About</a>
+      <a href="inspiration-intake.html">0 · inspiration-intake</a>
+      <a href="mbk-brand-kit.html">1 · brand-kit</a>
+      <a href="social-image-studio.html">2 · social-image-studio</a>
+      <a href="marketing-agent-studio.html">3 · marketing-agent-studio</a>
+      <a href="remotion-motion-studio.html" class="active" aria-current="page">4 · remotion-motion-studio</a>
+      <a href="brand-kit-template.html">+ · brand-kit template</a>
+      <a href="role-prompts.html">· agent role prompts</a>
+    </nav>
+    <div class="side-sep" role="presentation"></div>
+    <nav class="side-list">
+      <a href="../index.html">← Back to home</a>
+      <a href="https://github.com/Basharlouzon/marketing-studio" target="_blank" rel="noopener">GitHub repo ↗</a>
+    </nav>
+  </aside>
+
+  <main class="doc" id="doc">
+    <header class="doc-head">
+      <p class="eyebrow">Marketing Studio docs</p>
+      <h1>remotion-motion-studio</h1>
+      <p class="src">Pre-rendered at build from <a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/remotion-motion-studio/SKILL.md" target="_blank" rel="noopener"><code>skills/remotion-motion-studio/SKILL.md</code></a> — docs can't drift from the code.</p>
+    </header>
+    <h1 id="remotion-motion-studio">REMOTION MOTION STUDIO</h1>
+<p>Real choreographed motion via the proven Remotion project. Never ship static-slide zoompan as motion — it was rejected by the user ("looks awful"). Pipeline: Motion Designer (spec) → Motion Animator (implementation) → you (brand check → final render → frame QA). For a single short video, you may implement the spec yourself using the existing primitives — the two-agent split pays off at 3+ videos.</p>
+<h2 id="0-workspace-guard">0. WORKSPACE GUARD<a class="anchor" href="#0-workspace-guard" aria-label="Link to this section">#</a></h2>
+<p>Project: <code>/Users/basharlouzon/Desktop/dev/jackob/promo/mbk-promo</code>. If <code>ls promo/mbk-promo</code> fails, ask for the video project location before writing code.</p>
+<h2 id="1-the-project-verified">1. THE PROJECT (verified)<a class="anchor" href="#1-the-project-verified" aria-label="Link to this section">#</a></h2>
+<p>Remotion 4.0.531 + React 19 + TS 5.9.
+- <code>src/anim.tsx</code>: <strong>Word / Words</strong> (mask-rise 13f, cubic-bezier(0.16,1,0.3,1)), <strong>Rise</strong> (fade + 28px, 16f) — reuse.
+- <code>src/theme.ts</code>: <code>C</code> (C.primary #D8151E red, C.paper #FBFCFE, navyDeep #0C1734, navy2 #152A5E…), <code>darkBg</code>, <code>gridOverlay</code>, <code>FONT</code>. Note: bright red #fc5950 and gold #ebc831 are NOT in theme.ts — they're <code>BRIGHT_RED</code>/<code>GOLD</code> in <code>src/october/shared.tsx</code>; the #101b37 navy lives in the brand CSS, not this project (project navy = #0C1734).
+- <code>src/october/shared.tsx</code>: <code>Pop</code>, <code>pulse</code>, <code>SceneShell</code>, <code>TopHeader</code>, <code>Footer</code>, <code>CtaPill</code>, <code>EndCard</code>, <code>MascotVisual</code>, <code>PumpkinVisual</code>, <code>MONO</code> (mono font stack), <code>BRIGHT_RED</code>, <code>GOLD</code> — clone these patterns.
+- <code>src/fonts.ts</code>: Geist from <code>public/fonts/Geist-Variable.woff2</code>.
+- Assets: <code>public/october/mascot.png</code> → <code>staticFile("october/mascot.png")</code>; music bed <code>public/music.wav</code> (35.46s) → <code>&lt;Audio src={staticFile("music.wav")} /&gt;</code> in every composition — keep videos ≤35s or add <code>loop</code>.
+- CLI: <code>./node_modules/.bin/remotion</code>, <code>./node_modules/.bin/tsc</code>, eslint.
+- Palette source of truth: <code>mbk-brand-kit</code> skill <code>assets/tokens.json</code>.</p>
+<h2 id="2-pipeline">2. PIPELINE<a class="anchor" href="#2-pipeline" aria-label="Link to this section">#</a></h2>
+<ol>
+<li><strong>Lock copy per scene</strong> (verb-first CTAs; you will audit the animator's copy anyway — it drifts). No locked <em>campaign</em> concept yet (the <code>inspiration-intake</code> §3 lock — distinct from this copy lock)? Run <code>inspiration-intake</code> first, then return to this step.</li>
+<li><strong>Motion Designer agent</strong> (worth it for multi-scene work) → frame-precise spec: per-scene timeline table (in/out frames summing EXACTLY to total), per-element entrances (type/start/duration/stagger), transitions (never the same presentation twice in a row; end-card cut = flip), end-card ≥60f settled hold with exactly one ambient loop + one CTA pulse pair, global motion rules. Durations: shorts default <strong>30s = 900f @30fps</strong> (the 450f/15s October figure was a spec-math example, not a rule). Persist the spec to the campaign's <code>strategy/MOTION-SPEC.md</code>. Full brief template: <code>marketing-agent-studio/references/role-prompts.md</code> (MOTION DESIGNER).</li>
+<li><strong>Motion Animator agent</strong> → implement. Brief must include: project facts above, locked copy, full spec, and required self-validation — <code>tsc --noEmit</code> clean, eslint clean, <code>remotion still &lt;Id&gt; out/test.png --frame=&lt;N&gt;</code> at 2–3 key frames per comp VIEWED for overlap/broken assets/copy — plus: no full renders, no off-brand CTAs. Conventions: new composition id <code>&lt;Month&gt;&lt;Concept&gt;</code> (e.g. DecemberYearEnd), code in <code>src/&lt;month&gt;/</code>, register in <code>src/Root.tsx</code> following the October block; never mutate the original Promo.</li>
+<li><strong>You</strong>: brand-audit CTAs/claims → render finals → frame QA → deliver.</li>
+</ol>
+<h2 id="3-render-qa">3. RENDER + QA<a class="anchor" href="#3-render-qa" aria-label="Link to this section">#</a></h2>
+<ul>
+<li><code>cd promo/mbk-promo &amp;&amp; ./node_modules/.bin/remotion render &lt;CompositionId&gt; out/&lt;name&gt;.mp4 --codec=h264</code> (450f ≈ 2.5MB, a few minutes).</li>
+<li>Frame QA: <code>&lt;remotion-motion-studio&gt;/scripts/extract_qa_frames.sh &lt;video.mp4&gt;</code> (samples t=1,5,10,14; set <code>EXTRA_TIMES="20 25 29"</code> for longer videos) → judge the frames. Tolerance to state in the judge prompt: mid-entrance states at t=1s are motion, not bugs; end-cards must be fully settled (visual + headline + CTA all present).</li>
+<li>Copy finished MP4s to the campaign <code>videos/out/</code> with descriptive names.</li>
+</ul>
+<h2 id="4-motion-rules-default-spec-language">4. MOTION RULES (default spec language)<a class="anchor" href="#4-motion-rules-default-spec-language" aria-label="Link to this section">#</a></h2>
+<ul>
+<li>Easing: cubic-bezier(0.16,1,0.3,1) or spring damping ≥14; linear ONLY for counters.</li>
+<li>≤2 entrance types per scene; word stagger 2–4f; list-row cascade 6–7f; all entrances complete by f40 of a scene; scenes &gt;84f hold ≥30f static before the cut.</li>
+<li>Nothing moves without purpose (bars grow = data; cascades = lists; a count = time; float/breath = life).</li>
+<li>Transitions 12–16f linearTiming; vary presentations; the cut into every end-card is the flip.</li>
+<li>Color as accent: red on figures/CTA only; gold on the single hero accent; paper cards on navy.</li>
+<li>End-card: mascot/pumpkin + headline + CTA; ≥60f settled; one ambient loop; CTA double-pulse in the last 30f.</li>
+</ul>
+<h2 id="5-traps">5. TRAPS<a class="anchor" href="#5-traps" aria-label="Link to this section">#</a></h2>
+<ul>
+<li>Broken asset = faint circle in renders (judges fail it) — confirm <code>public/</code> paths before animating; new assets go through <code>staticFile</code>.</li>
+<li>Agents write off-brand CTAs — audit every string before render.</li>
+<li>t=1s partially-masked headlines are correct motion — tell the judge, or it fails healthy frames.</li>
+<li>Don't leave test stills in <code>out/</code> when delivering.</li>
+<li>Reference implementation: <code>src/october/</code> (OctoberQ3 / OctoberSnapshot / OctoberHalloween, each exactly 450f net).</li>
+</ul>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    <ul>
+      <li><a href="#0-workspace-guard">0. WORKSPACE GUARD</a></li>
+<li><a href="#1-the-project-verified">1. THE PROJECT (verified)</a></li>
+<li><a href="#2-pipeline">2. PIPELINE</a></li>
+<li><a href="#3-render-qa">3. RENDER + QA</a></li>
+<li><a href="#4-motion-rules-default-spec-language">4. MOTION RULES (default spec language)</a></li>
+<li><a href="#5-traps">5. TRAPS</a></li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="docs-footer">
+  <b>Marketing Studio</b> · docs are pre-rendered from the shipped SKILL.md files at build time — they can't drift from the code · <span style="font-family: var(--mono); font-size: 12px;">v1.0</span>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

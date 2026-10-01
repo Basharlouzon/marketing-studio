@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>inspiration-intake — Marketing Studio Docs</title>
+<meta name="description" content="Two steps before any concept lock: intake (ask the user) and inspiration (look at the internet). Both write into the campaign folder so decisions survive the s…" />
+<meta name="theme-color" content="#fbfcfe" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marketing Studio" />
+<meta property="og:title" content="inspiration-intake — Marketing Studio Docs" />
+<meta property="og:description" content="Two steps before any concept lock: intake (ask the user) and inspiration (look at the internet). Both write into the campaign folder so decisions survive the s…" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="inspiration-intake — Marketing Studio Docs" />
+<meta name="twitter:description" content="Two steps before any concept lock: intake (ask the user) and inspiration (look at the internet). Both write into the campaign folder so decisions survive the s…" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="docs-body">
+<a class="skip" href="#doc">Skip to content</a>
+
+<header class="nav docs-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#showcase">Showcase</a>
+      <a href="about.html">Docs</a>
+      <a class="btn btn-gold" href="../index.html#install">Get the skills</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open docs menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="#101b37" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<button class="scrim" id="scrim" tabindex="-1" aria-hidden="true"></button>
+
+<div class="docs-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Docs">
+    <p class="side-label">Docs</p>
+    <nav class="side-list">
+      <a href="about.html">About</a>
+      <a href="inspiration-intake.html" class="active" aria-current="page">0 · inspiration-intake</a>
+      <a href="mbk-brand-kit.html">1 · brand-kit</a>
+      <a href="social-image-studio.html">2 · social-image-studio</a>
+      <a href="marketing-agent-studio.html">3 · marketing-agent-studio</a>
+      <a href="remotion-motion-studio.html">4 · remotion-motion-studio</a>
+      <a href="brand-kit-template.html">+ · brand-kit template</a>
+      <a href="role-prompts.html">· agent role prompts</a>
+    </nav>
+    <div class="side-sep" role="presentation"></div>
+    <nav class="side-list">
+      <a href="../index.html">← Back to home</a>
+      <a href="https://github.com/Basharlouzon/marketing-studio" target="_blank" rel="noopener">GitHub repo ↗</a>
+    </nav>
+  </aside>
+
+  <main class="doc" id="doc">
+    <header class="doc-head">
+      <p class="eyebrow">Marketing Studio docs</p>
+      <h1>inspiration-intake</h1>
+      <p class="src">Pre-rendered at build from <a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/inspiration-intake/SKILL.md" target="_blank" rel="noopener"><code>skills/inspiration-intake/SKILL.md</code></a> — docs can't drift from the code.</p>
+    </header>
+    <h1 id="inspiration-intake-ask-first-look-around-then-build">INSPIRATION &amp; INTAKE — ask first, look around, then build</h1>
+<p>Two steps before any concept lock: <strong>intake</strong> (ask the user) and <strong>inspiration</strong> (look at the internet). Both write into the campaign folder so decisions survive the session. Order: intake → inspiration → concept lock (see <code>marketing-agent-studio</code> §5).</p>
+<h2 id="0-workspace-guard">0. WORKSPACE GUARD<a class="anchor" href="#0-workspace-guard" aria-label="Link to this section">#</a></h2>
+<p>Campaign folder convention: <code>promo/&lt;month-or-name&gt;/</code> with <code>strategy/</code> inside. If no campaign folder exists yet, create it — assets + generator recipe come from <code>mbk-brand-kit</code> §8, folder layout from <code>marketing-agent-studio</code> §3 — and put <code>strategy/INTAKE.md</code> + <code>strategy/INSPIRATION.md</code> there as the first two files.</p>
+<h2 id="1-intake-ask-the-user-what-he-is-looking-for">1. INTAKE — ask the user what he is looking for<a class="anchor" href="#1-intake-ask-the-user-what-he-is-looking-for" aria-label="Link to this section">#</a></h2>
+<p><strong>When to ask:</strong> new campaign/content month without a locked concept · new visual style · vague briefs ("something cool", "you decide", "fresh ideas") · a new channel the brand hasn't posted on.
+<strong>When NOT to ask:</strong> the user already gave concept + count + style · revision/bug-fix tasks · autonomous correction loops (the user isn't watching — use brand-kit defaults instead). <strong>Repeat-month case</strong> ("{month} was great — do the same for December"): skip the questions AND the research — pre-fill INTAKE.md from the prior month's INTAKE.md + the user's count, write a one-line INSPIRATION.md skip-note, and lock a FRESH concept from mbk-brand-kit §7 hooks (the old concept was calendar-bound to the prior month). This precedence overrides any "never skip intake" rule elsewhere: intake means asking the USER, and the user already answered.</p>
+<p><strong>How:</strong> use the AskUserQuestion tool with 3–4 questions max, each with 2–4 concrete options — mark the brand-kit default "(Recommended)" AND list it first. One reconciliation rule: when the brief signals freshness ("something cool/fresh"), recommend "Seasonal twist" or "Bolder &amp; playful" instead of "keep the current system" — recommending the stale formula back at a freshness request reads as not listening.
+1. <strong>Goal this month</strong> — Leads (free-snapshot signups) [Recommended] / Awareness &amp; reach / Engagement &amp; followers / Announce something specific
+2. <strong>Look &amp; feel</strong> — Keep the current system [Recommended] / Seasonal twist (per mbk-brand-kit §7: gold accents + mascot props — §3 palette tokens stay canonical) / Bolder &amp; playful / Match a reference the user names
+3. <strong>Channels</strong> — Feed + stories [Recommended] / Add Reels-TikTok / Full (add YouTube + email)
+4. <strong>Feature or avoid</strong> — Nothing specific this month (Recommended) / Feature the from-$495/mo flat pricing / Target a vertical (name it: restaurants, salons, contractors…) / Avoid holiday clichés — user refines via the automatic "Other" (still provide the 2–4 options; "Other" cannot replace them).</p>
+<p>Write the answers to <code>strategy/INTAKE.md</code> (goal, look, channels, feature/avoid, date). If the user answers in free text, extract to the same structure. Never re-ask what the user already stated in the request — pre-fill and confirm instead.</p>
+<h2 id="2-inspiration-look-at-the-internet-timebox-10-tool-calls-35-searches-23-fetches">2. INSPIRATION — look at the internet (timebox: ≤10 tool calls — 3–5 searches + 2–3 fetches)<a class="anchor" href="#2-inspiration-look-at-the-internet-timebox-10-tool-calls-35-searches-23-fetches" aria-label="Link to this section">#</a></h2>
+<p><strong>When:</strong> after intake, before locking the concept or design system. <strong>Skip when:</strong> the user says "keep it exactly like last month" or this is a revision.
+<strong>Never:</strong> copy text, images, or layouts wholesale — inspiration is patterns, filtered through <code>mbk-brand-kit</code> (§3 palette + §6 copy budgets win over any trend).</p>
+<p><strong>Search set (WebSearch, pick 3–5; ≤5–6 words per query, ONE topic each — stuffed queries return sludge):</strong>
+- "{industry} social media trends {Year}" — use the current or a past month, never the future campaign month (future-month trend data doesn't exist; note the recency gap in INSPIRATION.md)
+- "instagram feed design trends {Year}"
+- "{vertical} content ideas {hook}" — hook from mbk-brand-kit §7, e.g. "bookkeeper year-end close checklist ideas"
+- "IRS small business tax deadlines {Month Year}" — deadline dates come from the source, not listicles
+- "reels / short-form video trends {Month Year}" — include whenever the channels answer includes Reels-TikTok; extract motion/transition/pacing patterns (feeds <code>remotion-motion-studio</code> §2)
+<strong>Then WebFetch</strong> the 2–3 most promising results — pass a prompt like "extract concrete formats, hooks, and visual patterns with examples"; if it returns a redirect URL instead of content, re-call with that URL.
+<strong>Visual references (optional, 1–2 calls):</strong> for the look &amp; feel answer, use the image-search tool (<code>search_image</code>, params query/count/gl/rank) — e.g. query "instagram feed design {Year} {industry}", count 6, gl "us" — and list the 3–6 most useful image URLs in INSPIRATION.md under "Visual references" (composition/palette reference only; never copy assets).
+<strong>When a search fails or returns sludge</strong> (rate limits, listicle farms — web search cannot show real Instagram accounts): mark it WEAK in INSPIRATION.md, lean on mbk-brand-kit §7 hooks, and move on — don't burn the timebox retrying.</p>
+<p><strong>Extract, into <code>strategy/INSPIRATION.md</code>:</strong>
+1. <strong>Trends found</strong> — 5–8 bullets, each with source URL and a one-line "what it actually is".
+2. <strong>Adopted</strong> — trends mapped to CONCRETE decisions in this campaign ("carousels for checklists → our checklist layouts get a swipeable 3-page variant"). Only adopt what survives the brand kit.
+3. <strong>Rejected &amp; why</strong> — trends that clash with the brand (e.g. "neo-brutalism: violates the calm-grid personality").
+4. <strong>Sources</strong> — link list.</p>
+<h2 id="3-concept-lock">3. CONCEPT LOCK<a class="anchor" href="#3-concept-lock" aria-label="Link to this section">#</a></h2>
+<p>With intake answers + inspiration in hand, lock the concept (concept name + weekly arcs + asset counts), then proceed per <code>marketing-agent-studio</code> §1 (wave planning) and §5b (sequencing). The INTAKE.md and INSPIRATION.md are the first two files in <code>strategy/</code> — reference them in the campaign README. If the locked concept includes video/Reels, continue into <code>remotion-motion-studio</code> §2 — its step 1 expects exactly this concept lock, and INSPIRATION.md's motion notes feed the MOTION-SPEC.</p>
+<h2 id="4-traps">4. TRAPS<a class="anchor" href="#4-traps" aria-label="Link to this section">#</a></h2>
+<ul>
+<li>Don't let search results overwrite brand truth — trends inform, the brand kit decides.</li>
+<li>Don't ask questions the user's request already answered (that reads as not listening).</li>
+<li>Don't skip intake on a vague brief even if a previous campaign exists — "something fresh" is an explicit signal the old formula is stale.</li>
+<li>Search results can be SEO sludge — prefer sources that show concrete examples (platform trend reports, design galleries) over listicle farms; say so in INSPIRATION.md when sources are weak.</li>
+</ul>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    <ul>
+      <li><a href="#0-workspace-guard">0. WORKSPACE GUARD</a></li>
+<li><a href="#1-intake-ask-the-user-what-he-is-looking-for">1. INTAKE — ask the user what he is looking for</a></li>
+<li><a href="#2-inspiration-look-at-the-internet-timebox-10-tool-calls-35-searches-23-fetches">2. INSPIRATION — look at the internet (timebox: ≤10 tool calls — 3–5 searches + 2–3 fetches)</a></li>
+<li><a href="#3-concept-lock">3. CONCEPT LOCK</a></li>
+<li><a href="#4-traps">4. TRAPS</a></li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="docs-footer">
+  <b>Marketing Studio</b> · docs are pre-rendered from the shipped SKILL.md files at build time — they can't drift from the code · <span style="font-family: var(--mono); font-size: 12px;">v1.0</span>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

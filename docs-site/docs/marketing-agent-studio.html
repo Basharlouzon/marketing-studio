@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>marketing-agent-studio — Marketing Studio Docs</title>
+<meta name="description" content="Run marketing work as a studio of named expert agents. You are the executive + builder: agents produce strategy and copy; you produce rendered assets and enfor…" />
+<meta name="theme-color" content="#fbfcfe" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marketing Studio" />
+<meta property="og:title" content="marketing-agent-studio — Marketing Studio Docs" />
+<meta property="og:description" content="Run marketing work as a studio of named expert agents. You are the executive + builder: agents produce strategy and copy; you produce rendered assets and enfor…" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="marketing-agent-studio — Marketing Studio Docs" />
+<meta name="twitter:description" content="Run marketing work as a studio of named expert agents. You are the executive + builder: agents produce strategy and copy; you produce rendered assets and enfor…" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="docs-body">
+<a class="skip" href="#doc">Skip to content</a>
+
+<header class="nav docs-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#showcase">Showcase</a>
+      <a href="about.html">Docs</a>
+      <a class="btn btn-gold" href="../index.html#install">Get the skills</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open docs menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="#101b37" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<button class="scrim" id="scrim" tabindex="-1" aria-hidden="true"></button>
+
+<div class="docs-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Docs">
+    <p class="side-label">Docs</p>
+    <nav class="side-list">
+      <a href="about.html">About</a>
+      <a href="inspiration-intake.html">0 · inspiration-intake</a>
+      <a href="mbk-brand-kit.html">1 · brand-kit</a>
+      <a href="social-image-studio.html">2 · social-image-studio</a>
+      <a href="marketing-agent-studio.html" class="active" aria-current="page">3 · marketing-agent-studio</a>
+      <a href="remotion-motion-studio.html">4 · remotion-motion-studio</a>
+      <a href="brand-kit-template.html">+ · brand-kit template</a>
+      <a href="role-prompts.html">· agent role prompts</a>
+    </nav>
+    <div class="side-sep" role="presentation"></div>
+    <nav class="side-list">
+      <a href="../index.html">← Back to home</a>
+      <a href="https://github.com/Basharlouzon/marketing-studio" target="_blank" rel="noopener">GitHub repo ↗</a>
+    </nav>
+  </aside>
+
+  <main class="doc" id="doc">
+    <header class="doc-head">
+      <p class="eyebrow">Marketing Studio docs</p>
+      <h1>marketing-agent-studio</h1>
+      <p class="src">Pre-rendered at build from <a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/marketing-agent-studio/SKILL.md" target="_blank" rel="noopener"><code>skills/marketing-agent-studio/SKILL.md</code></a> — docs can't drift from the code.</p>
+    </header>
+    <h1 id="marketing-agent-studio">MARKETING AGENT STUDIO</h1>
+<p>Run marketing work as a studio of named expert agents. You are the executive + builder: agents produce strategy and copy; you produce rendered assets and enforce QA.</p>
+<h2 id="0-scope-full-studio-vs-solo-mode-decide-first">0. SCOPE — full studio vs solo mode (decide first)<a class="anchor" href="#0-scope-full-studio-vs-solo-mode-decide-first" aria-label="Link to this section">#</a></h2>
+<ul>
+<li><strong>Solo mode</strong> (small batches, ≤12 post-units — see §5 — existing brand kit): lock the concept yourself, write copy yourself against <code>mbk-brand-kit</code> §5/§6, skip agent waves except judges. The studio still owns: folder layout (§3), caption schema, calendar shape, and the judge gate. Skip any role whose deliverable already exists frozen in the brand kit (strategist/verbal-identity/personas are already in there).</li>
+<li><strong>Full studio</strong> (campaigns, new brand work, 3+ videos, multi-channel months): run the role pipeline below.
+All <code>promo/...</code> paths assume the Mr. Bookkeeper workspace (see <code>mbk-brand-kit</code> §0 guard).</li>
+</ul>
+<h2 id="1-orchestration-rules">1. ORCHESTRATION RULES<a class="anchor" href="#1-orchestration-rules" aria-label="Link to this section">#</a></h2>
+<ul>
+<li><strong>Wave limit ≤4 agents</strong>; independent agents in parallel (Agent tool, run_in_background: true); block on results with TaskOutput.</li>
+<li><strong>Order</strong>: strategy/design → copy → build (you) → visual-judge QA → fix loop. To parallelize, lock the concept yourself first and brief every agent with it.</li>
+<li><strong>Self-contained prompts</strong>: agents have zero session context. Inject the facts pack (<code>mbk-brand-kit</code> §2) + voice (<code>§5</code>) verbatim, the exact output format, character budgets, and "commit to decisions — no options, no process narration".</li>
+<li><strong>Validation demands</strong>: copy agents return strict JSON/labeled copy only; code agents must self-validate (typecheck + rendered test stills viewed) before reporting done. You run the full renders.</li>
+<li><strong>Brand audit on every agent return</strong>: check CTAs against brand-kit §5 and claims against §2 — agents drift (real example: an animator wrote "Book your 48-hour snapshot" where the brand says "Get your free snapshot").</li>
+<li><strong>Persist immediately</strong>: agent output goes to <code>strategy/*.md</code> files as soon as it lands — it dies with the session context otherwise.</li>
+</ul>
+<h2 id="2-the-roles">2. THE ROLES<a class="anchor" href="#2-the-roles" aria-label="Link to this section">#</a></h2>
+<p>Read the full copy-paste brief in <code>references/role-prompts.md</code> before dispatching any role. Summary:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Produces</th>
+<th>Key constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campaign Director</td>
+<td>campaign-on-a-page, weekly arcs, day-by-day calendar, hashtag system, asset manifest</td>
+<td>real seasonal moments only; realistic KPIs</td>
+</tr>
+<tr>
+<td>Content Writer</td>
+<td>strict-JSON display copy + captions + emails</td>
+<td>char budgets; " || " line-break markers; verb-first CTAs</td>
+</tr>
+<tr>
+<td>Video Director</td>
+<td>short-form scripts (hook/beats/CTA/caption/props) + YouTube packages</td>
+<td>searchable titles; no fake testimonials</td>
+</tr>
+<tr>
+<td>Brand Strategist</td>
+<td>purpose/mission/vision/positioning, one tagline, 5 values, 5 personality sliders, 3 personas, archetypes</td>
+<td>commit to decisions, ≤900 words</td>
+</tr>
+<tr>
+<td>Verbal Identity</td>
+<td>4 voice principles, tone spectrum, say/not-that rows, 4 messaging pillars, 3-length boilerplate, formatting rules</td>
+<td>≤900 words</td>
+</tr>
+<tr>
+<td>Motion Designer</td>
+<td>frame-precise motion spec (timelines sum exactly; entrances; transitions; end-cards)</td>
+<td>Remotion-feasible only</td>
+</tr>
+<tr>
+<td>Motion Animator</td>
+<td>implemented compositions, self-validated</td>
+<td>no full renders; no off-brand CTAs</td>
+</tr>
+<tr>
+<td>Visual judge</td>
+<td>pass/fail + evidence per file</td>
+<td>see <code>social-image-studio</code> §4 for the literal prompt</td>
+</tr>
+</tbody>
+</table></div>
+<p>Judge mechanism (real tooling): dispatch judge agents with the Agent tool (≤4 per wave, background), collect with TaskOutput. Judges are stateless — a re-judge is simply a new pass over only the failed files.</p>
+<h2 id="3-definitions-so-you-never-have-to-ask">3. DEFINITIONS (so you never have to ask)<a class="anchor" href="#3-definitions-so-you-never-have-to-ask" aria-label="Link to this section">#</a></h2>
+<p>A <strong>post</strong> = 1080×1350 PNG + 1080×1920 story variant + caption (hook → value line → verb-first CTA + 3–5 hashtags) in a captions file. Default cadence ~3/week, weekends light. <strong>Campaign folder</strong> layout: <code>strategy/</code> (INTAKE.md, INSPIRATION.md, CAMPAIGN-PLAN.md, VIDEO-SCRIPTS.md, CAPTIONS-AND-EMAILS.md, MOTION-SPEC.md) + <code>images/</code> + <code>videos/out/</code> + <code>youtube/thumbnails/</code> + <code>README.md</code>.</p>
+<h2 id="4-facts-voice">4. FACTS + VOICE<a class="anchor" href="#4-facts-voice" aria-label="Link to this section">#</a></h2>
+<p>Inject <code>mbk-brand-kit</code> §2 (real facts) and §5 (voice/CTA/banned words) verbatim into every brief. This is the single defense against invented clients and metrics.</p>
+<h2 id="5-sequencing-phase-0-inspiration-intake-skill">5. SEQUENCING (phase 0 = inspiration-intake skill)<a class="anchor" href="#5-sequencing-phase-0-inspiration-intake-skill" aria-label="Link to this section">#</a></h2>
+<p><strong>Phase 0 — intake + inspiration:</strong> unless the user already locked a full concept, run the <code>inspiration-intake</code> skill first: ask the user what he is looking for (goal / look / channels / feature-or-avoid), research current trends on the internet, and write <code>strategy/INTAKE.md</code> + <code>strategy/INSPIRATION.md</code>. Full studio runs the skill at full depth: one AskUserQuestion with all 3–4 questions, then the ≤8-call inspiration pass. Solo mode compresses phase 0 to one AskUserQuestion with 1–2 questions (goal + look &amp; feel) and skips inspiration research unless the user asked for a new look. Precedence: if the request already answered the intake questions (e.g. "{month} was great — do the same"), skip the questions entirely, pre-fill INTAKE.md from the prior month, and let <code>inspiration-intake</code> §1 drive. §0's "lock the concept yourself" happens after phase 0, using the INTAKE.md answers. Asset counts are in post-units (a post-unit = post + story pair); solo = ≤12 post-units.</p>
+<h2 id="5b-sequencing-example-what-worked-for-the-october-campaign">5b. SEQUENCING EXAMPLE (what worked for the October campaign)<a class="anchor" href="#5b-sequencing-example-what-worked-for-the-october-campaign" aria-label="Link to this section">#</a></h2>
+<ol>
+<li>Lock the concept yourself on real calendar moments ("CLOSE Q3. OWN Q4.").</li>
+<li>Wave A parallel-background: Campaign Director + Video Director, both briefed with the locked concept.</li>
+<li>Build images/videos while they run; on arrival, dispatch Wave B: Content Writer against the calendar.</li>
+<li>Render → visual-judge waves → fix → re-judge.</li>
+<li>Assemble <code>strategy/*.md</code> + README → deliver.</li>
+</ol>
+<h2 id="6-reference-outputs-real-examples-worth-imitating">6. REFERENCE OUTPUTS (real examples worth imitating)<a class="anchor" href="#6-reference-outputs-real-examples-worth-imitating" aria-label="Link to this section">#</a></h2>
+<p><code>promo/october/strategy/</code> — INTAKE.md, INSPIRATION.md (retroactive stubs), CAMPAIGN-PLAN.md, VIDEO-SCRIPTS.md, CAPTIONS-AND-EMAILS.md, MOTION-SPEC.md; <code>promo/brand/Mr-Bookkeeper-Brand-Guidelines.pdf</code> (18 pages).</p>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    <ul>
+      <li><a href="#0-scope-full-studio-vs-solo-mode-decide-first">0. SCOPE — full studio vs solo mode (decide first)</a></li>
+<li><a href="#1-orchestration-rules">1. ORCHESTRATION RULES</a></li>
+<li><a href="#2-the-roles">2. THE ROLES</a></li>
+<li><a href="#3-definitions-so-you-never-have-to-ask">3. DEFINITIONS (so you never have to ask)</a></li>
+<li><a href="#4-facts-voice">4. FACTS + VOICE</a></li>
+<li><a href="#5-sequencing-phase-0-inspiration-intake-skill">5. SEQUENCING (phase 0 = inspiration-intake skill)</a></li>
+<li><a href="#5b-sequencing-example-what-worked-for-the-october-campaign">5b. SEQUENCING EXAMPLE (what worked for the October campaign)</a></li>
+<li><a href="#6-reference-outputs-real-examples-worth-imitating">6. REFERENCE OUTPUTS (real examples worth imitating)</a></li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="docs-footer">
+  <b>Marketing Studio</b> · docs are pre-rendered from the shipped SKILL.md files at build time — they can't drift from the code · <span style="font-family: var(--mono); font-size: 12px;">v1.0</span>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

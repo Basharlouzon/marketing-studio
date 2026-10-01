@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>brand-kit template — Marketing Studio Docs</title>
+<meta name="description" content="Brand-truth skill. Load before generating any asset or copy for this brand." />
+<meta name="theme-color" content="#fbfcfe" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marketing Studio" />
+<meta property="og:title" content="brand-kit template — Marketing Studio Docs" />
+<meta property="og:description" content="Brand-truth skill. Load before generating any asset or copy for this brand." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="brand-kit template — Marketing Studio Docs" />
+<meta name="twitter:description" content="Brand-truth skill. Load before generating any asset or copy for this brand." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="docs-body">
+<a class="skip" href="#doc">Skip to content</a>
+
+<header class="nav docs-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#showcase">Showcase</a>
+      <a href="about.html">Docs</a>
+      <a class="btn btn-gold" href="../index.html#install">Get the skills</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open docs menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="#101b37" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<button class="scrim" id="scrim" tabindex="-1" aria-hidden="true"></button>
+
+<div class="docs-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Docs">
+    <p class="side-label">Docs</p>
+    <nav class="side-list">
+      <a href="about.html">About</a>
+      <a href="inspiration-intake.html">0 · inspiration-intake</a>
+      <a href="mbk-brand-kit.html">1 · brand-kit</a>
+      <a href="social-image-studio.html">2 · social-image-studio</a>
+      <a href="marketing-agent-studio.html">3 · marketing-agent-studio</a>
+      <a href="remotion-motion-studio.html">4 · remotion-motion-studio</a>
+      <a href="brand-kit-template.html" class="active" aria-current="page">+ · brand-kit template</a>
+      <a href="role-prompts.html">· agent role prompts</a>
+    </nav>
+    <div class="side-sep" role="presentation"></div>
+    <nav class="side-list">
+      <a href="../index.html">← Back to home</a>
+      <a href="https://github.com/Basharlouzon/marketing-studio" target="_blank" rel="noopener">GitHub repo ↗</a>
+    </nav>
+  </aside>
+
+  <main class="doc" id="doc">
+    <header class="doc-head">
+      <p class="eyebrow">Marketing Studio docs</p>
+      <h1>brand-kit template</h1>
+      <p class="src">Pre-rendered at build from <a href="https://github.com/Basharlouzon/marketing-studio/blob/main/templates/brand-kit-template/SKILL.md" target="_blank" rel="noopener"><code>templates/brand-kit-template/SKILL.md</code></a> — docs can't drift from the code.</p>
+    </header>
+    <h1 id="app-brand-kit">{APP} BRAND KIT</h1>
+<p>Brand-truth skill. Load before generating any asset or copy for this brand.</p>
+<h2 id="0-workspace-guard">0. WORKSPACE GUARD<a class="anchor" href="#0-workspace-guard" aria-label="Link to this section">#</a></h2>
+<p>Workspace root: <code>{/absolute/path/to/project}</code>. Pre-flight: verify the asset folder exists (<code>ls {assets-path}</code>); if not, ask the user where the assets live before generating anything.</p>
+<h2 id="1-the-brand-in-one-sentence">1. THE BRAND IN ONE SENTENCE<a class="anchor" href="#1-the-brand-in-one-sentence" aria-label="Link to this section">#</a></h2>
+<p>{One sentence anyone can repeat: what it does, for whom, the payoff.}</p>
+<p>Tagline: <strong>"{3-5 words}"</strong> (support lines if any).</p>
+<h2 id="2-real-facts-only-inventing-clients-metrics-or-results-is-the-one-unforgivable-error">2. REAL FACTS ONLY — inventing clients, metrics, or results is the one unforgivable error<a class="anchor" href="#2-real-facts-only-inventing-clients-metrics-or-results-is-the-one-unforgivable-error" aria-label="Link to this section">#</a></h2>
+<p>Extract from the product/site/codebase. List 6–12 bullet facts:
+- What the product is + who it's for + where (if local)
+- The 2–4 core features/deliverables, in plain words
+- Pricing model + entry price (exact)
+- The lead magnet / free offer, if any (with its real numbers)
+- Integrations / platforms it works with
+- The top 3–6 customer verticals or personas
+- Any real proof points (team credentials, guarantees) — nothing invented</p>
+<h2 id="3-color-canonical-source-assetstokensjson-in-this-skill-folder">3. COLOR — canonical source: <code>assets/tokens.json</code> in this skill folder<a class="anchor" href="#3-color-canonical-source-assetstokensjson-in-this-skill-folder" aria-label="Link to this section">#</a></h2>
+<p>Extract from the app's CSS (<code>globals.css</code>, tailwind config, or computed styles). For each token: name, oklch or hex, one-line use.
+| Token | Value | Use |
+|---|---|---|
+| Primary | {…} | CTAs, key accents |
+| … | | |</p>
+<p>Ratio rule (default 60/25/10/5: neutral / secondary / primary / accent). Dark-surface rule: state how text behaves on dark backgrounds.</p>
+<h2 id="4-logo-assets">4. LOGO &amp; ASSETS<a class="anchor" href="#4-logo-assets" aria-label="Link to this section">#</a></h2>
+<p>Folder: <code>{assets-path}</code>. For each file: name → what it is → where it's used. State: minimum sizes, clearspace, one "never" list (recolor/rotate/stretch/glow), and whether seasonal props on the logo are allowed.
+⚠️ Every workspace keeps its own asset copy with its own layout — verify the exact path exists (curl or ls) before rendering; a 404 logo renders as a broken circle and fails QA.</p>
+<h2 id="5-voice">5. VOICE<a class="anchor" href="#5-voice" aria-label="Link to this section">#</a></h2>
+<p>3–4 principles (name + meaning + one example line each).
+CTA conventions (verb-first only, list them; list the never-CTAs).
+Banned words. Formatting rules (sentence case, numerals, punctuation habits, emoji policy).
+Tone per channel (one line each).</p>
+<h2 id="6-copy-budgets">6. COPY BUDGETS<a class="anchor" href="#6-copy-budgets" aria-label="Link to this section">#</a></h2>
+<p>Badge ≤20 · headline ≤55 (multi-line marker: <code>"line1 || line2"</code> → <code>&lt;br&gt;</code>) · sub ≤95 · chips ≤20 · checklist item ≤48 · stats: number ≤6, label ≤28 · cta ≤22.
+A "post" deliverable = feed image + story variant + caption (hook → value → CTA + 3–5 hashtags). Default cadence if unspecified: ~3/week, weekends light.</p>
+<h2 id="7-seasonal-moments-the-products-real-calendar-hooks-never-retail-only-holidays">7. SEASONAL MOMENTS (the product's real calendar hooks — never retail-only holidays)<a class="anchor" href="#7-seasonal-moments-the-products-real-calendar-hooks-never-retail-only-holidays" aria-label="Link to this section">#</a></h2>
+<p>List the dates/moments that genuinely matter to this product's customers.</p>
+<h2 id="8-generators">8. GENERATORS<a class="anchor" href="#8-generators" aria-label="Link to this section">#</a></h2>
+<p>Where the layout library + campaign pattern live for this brand (clone from an existing month folder; never edit a frozen theme library).</p>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    <ul>
+      <li><a href="#0-workspace-guard">0. WORKSPACE GUARD</a></li>
+<li><a href="#1-the-brand-in-one-sentence">1. THE BRAND IN ONE SENTENCE</a></li>
+<li><a href="#2-real-facts-only-inventing-clients-metrics-or-results-is-the-one-unforgivable-error">2. REAL FACTS ONLY — inventing clients, metrics, or results is the one unforgivable error</a></li>
+<li><a href="#3-color-canonical-source-assetstokensjson-in-this-skill-folder">3. COLOR — canonical source: assets/tokens.json in this skill folder</a></li>
+<li><a href="#4-logo-assets">4. LOGO &amp; ASSETS</a></li>
+<li><a href="#5-voice">5. VOICE</a></li>
+<li><a href="#6-copy-budgets">6. COPY BUDGETS</a></li>
+<li><a href="#7-seasonal-moments-the-products-real-calendar-hooks-never-retail-only-holidays">7. SEASONAL MOMENTS (the product&#x27;s real calendar hooks — never retail-only holidays)</a></li>
+<li><a href="#8-generators">8. GENERATORS</a></li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="docs-footer">
+  <b>Marketing Studio</b> · docs are pre-rendered from the shipped SKILL.md files at build time — they can't drift from the code · <span style="font-family: var(--mono); font-size: 12px;">v1.0</span>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

@@ -1,6 +1,2 @@
-.DS_Store
-node_modules/
-__pycache__/
-*.pyc
-docs-site/docs/
-.vercel
+/Users/basharlouzon/Desktop/dev/jackob/marketing-studio/.gitignore
+.pybuild/

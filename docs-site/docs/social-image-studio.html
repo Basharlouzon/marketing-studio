@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>social-image-studio — Marketing Studio Docs</title>
+<meta name="description" content="Proven across 100+ shipped assets. Python generator → HTML cards → local HTTP → in-app-browser screenshot → PNG → visual-judge QA. Companion skills: mbk-brand-…" />
+<meta name="theme-color" content="#fbfcfe" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Marketing Studio" />
+<meta property="og:title" content="social-image-studio — Marketing Studio Docs" />
+<meta property="og:description" content="Proven across 100+ shipped assets. Python generator → HTML cards → local HTTP → in-app-browser screenshot → PNG → visual-judge QA. Companion skills: mbk-brand-…" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="social-image-studio — Marketing Studio Docs" />
+<meta name="twitter:description" content="Proven across 100+ shipped assets. Python generator → HTML cards → local HTTP → in-app-browser screenshot → PNG → visual-judge QA. Companion skills: mbk-brand-…" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="docs-body">
+<a class="skip" href="#doc">Skip to content</a>
+
+<header class="nav docs-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#showcase">Showcase</a>
+      <a href="about.html">Docs</a>
+      <a class="btn btn-gold" href="../index.html#install">Get the skills</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open docs menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="#101b37" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<button class="scrim" id="scrim" tabindex="-1" aria-hidden="true"></button>
+
+<div class="docs-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Docs">
+    <p class="side-label">Docs</p>
+    <nav class="side-list">
+      <a href="about.html">About</a>
+      <a href="inspiration-intake.html">0 · inspiration-intake</a>
+      <a href="mbk-brand-kit.html">1 · brand-kit</a>
+      <a href="social-image-studio.html" class="active" aria-current="page">2 · social-image-studio</a>
+      <a href="marketing-agent-studio.html">3 · marketing-agent-studio</a>
+      <a href="remotion-motion-studio.html">4 · remotion-motion-studio</a>
+      <a href="brand-kit-template.html">+ · brand-kit template</a>
+      <a href="role-prompts.html">· agent role prompts</a>
+    </nav>
+    <div class="side-sep" role="presentation"></div>
+    <nav class="side-list">
+      <a href="../index.html">← Back to home</a>
+      <a href="https://github.com/Basharlouzon/marketing-studio" target="_blank" rel="noopener">GitHub repo ↗</a>
+    </nav>
+  </aside>
+
+  <main class="doc" id="doc">
+    <header class="doc-head">
+      <p class="eyebrow">Marketing Studio docs</p>
+      <h1>social-image-studio</h1>
+      <p class="src">Pre-rendered at build from <a href="https://github.com/Basharlouzon/marketing-studio/blob/main/skills/social-image-studio/SKILL.md" target="_blank" rel="noopener"><code>skills/social-image-studio/SKILL.md</code></a> — docs can't drift from the code.</p>
+    </header>
+    <h1 id="social-image-studio-html-png-judged">SOCIAL IMAGE STUDIO — HTML → PNG → JUDGED</h1>
+<p>Proven across 100+ shipped assets. Python generator → HTML cards → local HTTP → in-app-browser screenshot → PNG → visual-judge QA. Companion skills: <code>mbk-brand-kit</code> (brand truth) for any Mr. Bookkeeper work.</p>
+<h2 id="0-workspace-guard">0. WORKSPACE GUARD<a class="anchor" href="#0-workspace-guard" aria-label="Link to this section">#</a></h2>
+<p>The example paths assume the Mr. Bookkeeper workspace (<code>ls promo</code> shows brand/social2/october/mbk-promo). If they don't resolve, ask the user where the assets live before generating.</p>
+<h2 id="1-architecture">1. ARCHITECTURE<a class="anchor" href="#1-architecture" aria-label="Link to this section">#</a></h2>
+<ol start="0">
+<li><strong>Phase 0 (new campaigns/styles only):</strong> run the <code>inspiration-intake</code> skill — ask the user what he is looking for and scan current design trends — before locking the design system. <strong>Skip</strong> for revisions, bug-fixes, or a user-locked concept/design ("keep it like last month") — go straight to step 1.</li>
+<li><strong>Generator</strong> (python): payload-driven builders → one self-sized HTML file per card. Copy lives in a data file (dict/JSON), never inline in layout code.</li>
+<li><strong>Serve</strong>: <code>cd &lt;folder&gt; &amp;&amp; python3 -m http.server 8734</code> (default port; any free port works — keep goto URLs consistent with it).</li>
+<li><strong>Render</strong>: browser-use IAB (recipe + bundled script below).</li>
+<li><strong>QA</strong>: preverify scans, then visual-judge agents on every shipped image; fix → re-render → re-judge. Skipping the judge gate is how broken assets reach the user.</li>
+</ol>
+<h2 id="2-the-render-step">2. THE RENDER STEP<a class="anchor" href="#2-the-render-step" aria-label="Link to this section">#</a></h2>
+<p><strong>Fast path — bundled script.</strong> From a <code>mcp__node_repl__js</code> cell:</p>
+<div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre><code class="language-js">const { pathToFileURL } = await import(&quot;node:url&quot;);
+const m = await import(pathToFileURL(&quot;&lt;this-skill-dir&gt;/scripts/render_batch.mjs&quot;).href);
+const { done, fails } = await m.renderBatch({ jobs: [
+  { url: &quot;http://localhost:8734/html/oct-01.html&quot;, w: 1080, h: 1350, out: &quot;/abs/images/oct-01.png&quot; },
+  { url: &quot;http://localhost:8734/html/oct-01-story.html&quot;, w: 1080, h: 1920, out: &quot;/abs/images/oct-01-story.png&quot; },
+]});
+done + &quot; rendered, fails: &quot; + fails.join(&quot;,&quot;);
+</code></pre></div>
+<p>The script implements everything below: plugin bootstrap, tab recovery, per-job viewport, <code>?v=</code> cache-buster, 2-attempt retry with 4s backoff, skip-if-exists resume.</p>
+<p><strong>Manual cell</strong> (when you need custom logic) — the bootstrap lines are the part everyone gets wrong; use exactly this shape:</p>
+<div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre><code class="language-js">const { join } = await import(&quot;node:path&quot;);
+const { pathToFileURL } = await import(&quot;node:url&quot;);
+const browserClientUrl = pathToFileURL(join(process.env.ZCODE_PLUGIN_ROOT ?? process.env.CLAUDE_PLUGIN_ROOT, &quot;scripts&quot;, &quot;browser-client.mjs&quot;)).href;
+const { setupBrowserRuntime } = await import(browserClientUrl);
+await setupBrowserRuntime({ globals: globalThis });   // binds `agent` + `nodeRepl` globals
+const browser = await agent.browsers.get(&quot;iab&quot;);
+// tab recovery, viewport, goto, screenshot → fs.writeFileSync …
+</code></pre></div>
+<p>Facts (verified against the plugin contract): IAB <code>setViewportSize</code> accepts 320–3840 × 320–2160; <code>tab.screenshot()</code> returns 1x Uint8Array → <code>fs.writeFileSync</code> from the same cell; <code>file:</code> URLs are NOT navigable — serve over local HTTP.
+Environment claims (headless Chrome CLI hangs; chrome-devtools MCP profile-lock + path restrictions) verified Oct 2026 — re-verify if the plugin set changes.</p>
+<h2 id="3-generator-discipline">3. GENERATOR DISCIPLINE<a class="anchor" href="#3-generator-discipline" aria-label="Link to this section">#</a></h2>
+<ul>
+<li><code>ROOT = os.path.dirname(os.path.abspath(__file__))</code> in every generator — a hardcoded absolute ROOT silently writes output into another campaign's folder.</li>
+<li>After Phase 0, read <code>strategy/INSPIRATION.md</code> "Adopted" + <code>strategy/INTAKE.md</code> before writing payloads: each Adopted decision binds a generator choice (e.g. "checklists get a swipeable 3-page variant" → emit 3 <code>checklist</code> payloads); intake feature/avoid items bind <code>badge</code>/<code>head</code>/<code>cta</code> copy.</li>
+<li>Payload schema (the 19-builder library in <code>promo/social2/gen2.py</code>): <code>{name, layout, cta, payload:{badge, head, sub, items|chips|logos|emoji|img|report, deep, mascot, foot, hs}}</code>. Literal example:</li>
+</ul>
+<div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre><code class="language-python">{&quot;name&quot;:&quot;dec-02-checklist&quot;,&quot;layout&quot;:&quot;checklist&quot;,&quot;cta&quot;:&quot;Get your free snapshot&quot;,
+ &quot;payload&quot;:{&quot;badge&quot;:&quot;Year-End Checklist&quot;,&quot;head&quot;:&quot;Close the year before the ball drops.&quot;,
+ &quot;items&quot;:[&quot;Confirm vendor 1099 details by Dec 31&quot;,&quot;Reconcile every account before Jan 1&quot;,
+ &quot;Match receipts to December spend&quot;,&quot;Book the January close while it is quiet&quot;],
+ &quot;sub&quot;:&quot;Save this. Your January self says thanks.&quot;}}
+</code></pre></div>
+<ul>
+<li>Headline multi-line: write <code>"line1 || line2"</code>; convert to <code>&lt;br&gt;</code> centrally in the headline helper. (<code>themes2.py</code>'s literal <code>&lt;br&gt;</code> is legacy.)</li>
+<li>New month/campaign = new folder with its own <code>assets/</code> copy, its own <code>gen2.py</code>, and its <code>strategy/</code> (INTAKE.md, INSPIRATION.md, CAMPAIGN-PLAN.md…); relative refs <code>../assets/...</code>. Never edit <code>promo/social2/themes2.py</code>.</li>
+<li>Photos in fixed-height cards: <code>object-fit:cover; object-position:50% 15%</code> — keeps faces in frame.</li>
+<li>Dark cards: global CSS override <code>.deep .headline { color: var(--fg) !important }</code> — inline dark defaults leak onto navy.</li>
+<li>Before any batch render: curl-check every referenced asset path (a 404 mascot renders as a broken faint circle).</li>
+</ul>
+<h2 id="4-qa-gate">4. QA GATE<a class="anchor" href="#4-qa-gate" aria-label="Link to this section">#</a></h2>
+<ol>
+<li><strong>Preverify</strong> (free): <code>python3 &lt;this-skill-dir&gt;/scripts/preverify.py images/</code> — prints size, dead-band and transparency findings. Plus your own Read of the 2–3 riskiest files.</li>
+<li><strong>Judges</strong>: dispatch judge agents (≤4 per wave, ≤20 files each; run_in_background, collect via TaskOutput). Judge prompt template — fill the braces:</li>
+</ol>
+<div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre><code>Visual acceptance for rendered {medium} for &quot;{brand one-liner}&quot; (brand: {palette+mascot+font}).
+Files: {absolute paths}
+Bar: &quot;would a business owner post this today?&quot; — no truncated/overlapping text; no
+collisions (footer on posts, CTA on stories); balanced composition (no dead band
+&gt;~250px on stories); assets render (no broken-image circles); readable contrast.
+Tolerance: {mid-animation/mid-entrance states are motion, not bugs}.
+Output one JSON line per file: {&quot;file&quot;:&quot;&lt;basename&gt;&quot;,&quot;verdict&quot;:&quot;pass|fail&quot;,&quot;issues&quot;:[&quot;specific evidence&quot;]}.
+</code></pre></div>
+<ol start="3">
+<li><strong>Fix loop</strong>: group fails by root cause (one CSS/asset fix cures many) → patch the generator → regenerate → re-render ONLY affected files (with <code>?v=</code> buster) → re-judge only the fixed files (a fresh judge pass over the failed list is fine — judges are stateless).</li>
+<li>Multi-page docs: render A4-ratio pages (1440×2036) → <code>PIL Image.save(pdf, save_all=True, append_images=…)</code>.</li>
+</ol>
+<h2 id="5-reference-implementations-read-before-writing-new-generators">5. REFERENCE IMPLEMENTATIONS (read before writing new generators)<a class="anchor" href="#5-reference-implementations-read-before-writing-new-generators" aria-label="Link to this section">#</a></h2>
+<ul>
+<li><code>promo/social2/gen2.py</code> — 19 layout builders, one payload → post + story</li>
+<li><code>promo/october/gen_october.py</code> — month-campaign pattern on top of gen2</li>
+<li><code>promo/october/gen_kv.py</code> — key visual + wide board + YT thumbnails in one file</li>
+<li><code>promo/brand/gen_brand.py</code> — 18-page A4 brand document → PDF</li>
+</ul>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    <ul>
+      <li><a href="#0-workspace-guard">0. WORKSPACE GUARD</a></li>
+<li><a href="#1-architecture">1. ARCHITECTURE</a></li>
+<li><a href="#2-the-render-step">2. THE RENDER STEP</a></li>
+<li><a href="#3-generator-discipline">3. GENERATOR DISCIPLINE</a></li>
+<li><a href="#4-qa-gate">4. QA GATE</a></li>
+<li><a href="#5-reference-implementations-read-before-writing-new-generators">5. REFERENCE IMPLEMENTATIONS (read before writing new generators)</a></li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="docs-footer">
+  <b>Marketing Studio</b> · docs are pre-rendered from the shipped SKILL.md files at build time — they can't drift from the code · <span style="font-family: var(--mono); font-size: 12px;">v1.0</span>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>
