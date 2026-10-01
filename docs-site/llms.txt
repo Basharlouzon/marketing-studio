@@ -1,0 +1,21 @@
+# Marketing Studio
+
+> An expert-agent marketing studio packaged as 5 ZCode skills: strategy agents, an image factory, motion-designed videos, and a visual-judge QA gate on every asset. Built and audited by AI agents (13-agent review, final sign-off 9/10).
+
+Works for any product: the studio machinery is generic; each product gets one fill-in brand-kit file (see the brand-kit template).
+
+## Docs
+
+- [About / how the studio fits together](https://marketing-studio-basharlouzons-projects.vercel.app/docs/about.html): orchestration model, provenance, repository layout
+- [inspiration-intake](https://marketing-studio-basharlouzons-projects.vercel.app/docs/inspiration-intake.html): ask the user what he's looking for + internet trend research, before any concept lock
+- [brand-kit](https://marketing-studio-basharlouzons-projects.vercel.app/docs/mbk-brand-kit.html): the per-product brand truth — color tokens, real facts, voice, layout laws
+- [social-image-studio](https://marketing-studio-basharlouzons-projects.vercel.app/docs/social-image-studio.html): HTML → pixel-exact images → visual-judge QA, with bundled render and preverify scripts
+- [marketing-agent-studio](https://marketing-studio-basharlouzons-projects.vercel.app/docs/marketing-agent-studio.html): which expert agent to dispatch, in what order, with what brief
+- [remotion-motion-studio](https://marketing-studio-basharlouzons-projects.vercel.app/docs/remotion-motion-studio.html): real motion-designed videos via Remotion — spec → implement → render
+- [brand-kit template](https://marketing-studio-basharlouzons-projects.vercel.app/docs/brand-kit-template.html): fill-in-the-blanks file for onboarding any new app
+- [agent role prompts](https://marketing-studio-basharlouzons-projects.vercel.app/docs/role-prompts.html): copy-paste briefs for all seven expert agents
+
+## Optional
+
+- [Install](https://marketing-studio-basharlouzons-projects.vercel.app/docs/about.html): `git clone` the repo, run `./install.sh`, restart ZCode
+- Source: https://github.com/Basharlouzon/marketing-studio

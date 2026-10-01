@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "docs-site"
 OUT = SITE / "docs"
 REPO = "https://github.com/Basharlouzon/marketing-studio"
+SITE_URL = "https://marketing-studio-basharlouzons-projects.vercel.app"
 
 # (page id, display label, source file) — single source for nav + pages
 DOCS = [
@@ -166,6 +167,8 @@ PAGE_TMPL = """<!doctype html>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Marketing Studio" />
+<meta property="og:image" content="{og_image}" />
+<meta property="og:url" content="{og_url}" />
 <meta property="og:title" content="{title} — Marketing Studio Docs" />
 <meta property="og:description" content="{description}" />
 <meta name="twitter:card" content="summary" />
@@ -215,9 +218,14 @@ PAGE_TMPL = """<!doctype html>
     <header class="doc-head">
       <p class="eyebrow">Marketing Studio docs</p>
       <h1>{title}</h1>
-      <p class="src">Pre-rendered at build from <a href="{src_url}" target="_blank" rel="noopener"><code>{src_path}</code></a> — docs can't drift from the code.</p>
+      <p class="src">Pre-rendered at build from <a href="{src_url}" target="_blank" rel="noopener"><code>{src_path}</code></a> — docs can't drift from the code. <span class="mono">Last built {date}</span></p>
     </header>
     {body}
+
+    <nav class="pager" aria-label="Adjacent pages">
+      {pager_prev}
+      {pager_next}
+    </nav>
   </main>
 
   <aside class="toc" aria-label="On this page">
@@ -252,7 +260,27 @@ def build_page(doc_id: str, title: str, src: Path, active_id: str) -> str:
     )
     src_rel = src.relative_to(ROOT).as_posix()
 
+    idx = next(i for i, (pid, _, _) in enumerate(DOCS) if pid == active_id)
+    prev_item = DOCS[idx - 1] if idx > 0 else None
+    next_item = DOCS[idx + 1] if idx + 1 < len(DOCS) else None
+    pager_prev = (
+        f'<a class="pager-link prev" href="{prev_item[0]}.html"><span>← Previous</span><b>{SIDEBAR_LABELS[prev_item[0]]}</b></a>'
+        if prev_item else "<span></span>"
+    )
+    pager_next = (
+        f'<a class="pager-link next" href="{next_item[0]}.html"><span>Next →</span><b>{SIDEBAR_LABELS[next_item[0]]}</b></a>'
+        if next_item else "<span></span>"
+    )
+
+    from datetime import date
+    built = date.today().isoformat()
+
     return PAGE_TMPL.format(
+        og_image=f"{SITE_URL}/og-image.png",
+        og_url=f"{SITE_URL}/docs/{doc_id}.html",
+        date=built,
+        pager_prev=pager_prev,
+        pager_next=pager_next,
         title=html.escape(title),
         description=html.escape(first_paragraph_text(body)),
         sidebar="\n      ".join(sidebar_items),

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1200px; height:630px; overflow:hidden; }
+body { font-family:'Geist',-apple-system,sans-serif; -webkit-font-smoothing:antialiased; }
+.deep { background:
+  radial-gradient(900px 600px at 78% 20%, rgba(235,200,49,0.10), transparent 60%),
+  radial-gradient(700px 500px at 8% 90%, rgba(252,89,80,0.08), transparent 60%),
+  linear-gradient(155deg, #0a1128 0%, #101b37 60%, #0b1428 100%); }
+.grid-bg { position:absolute; inset:0;
+  background-image: linear-gradient(rgba(251,252,254,0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(251,252,254,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(1100px 700px at 50% 30%, #000 20%, transparent 80%); }
+.wrap { position:absolute; inset:0; display:flex; align-items:center; padding:0 90px; gap:70px; }
+.left { flex:1.3; }
+.eyebrow { display:inline-flex; padding:9px 20px; border-radius:999px; border:1.5px solid rgba(235,200,49,0.45); color:#ebc831; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; font-size:14px; font-family:'Geist Mono',monospace; }
+h1 { margin-top:30px; font-size:78px; font-weight:900; line-height:1.03; letter-spacing:-0.03em; color:#f2f5fb; }
+h1 .gold { color:#ebc831; }
+.sub { margin-top:24px; font-size:22px; line-height:1.5; color:#9299a5; font-weight:500; max-width:560px; }
+.strip { margin-top:34px; display:flex; gap:26px; font-family:'Geist Mono',monospace; font-size:15px; color:#ebc831; font-weight:500; letter-spacing:0.06em; }
+.right { width:330px; display:flex; flex-direction:column; align-items:center; gap:30px; }
+.emblem { width:210px; height:210px; border-radius:50%; box-shadow:0 30px 80px rgba(0,0,0,0.5); }
+.lockup { background:#fc5950; color:#fff; font-weight:900; font-size:24px; letter-spacing:0.05em; padding:13px 34px; border-radius:14px; }
+.bottom { position:absolute; left:90px; right:90px; bottom:40px; display:flex; justify-content:space-between; align-items:center; }
+.bbrand { display:flex; align-items:center; gap:14px; color:#f2f5fb; font-weight:800; font-size:20px; }
+.bbrand .bm { width:36px; height:36px; border-radius:10px; background:#fc5950; display:inline-flex; align-items:center; justify-content:center; font-weight:900; font-size:15px; color:#fff; }
+.burl { font-family:'Geist Mono',monospace; font-size:15px; color:#9299a5; letter-spacing:0.08em; }
+</style></head>
+<body class="deep">
+<div class="grid-bg"></div>
+<div class="wrap">
+  <div class="left">
+    <div class="eyebrow">ZCode skills · agent-built · agent-audited</div>
+    <h1>An expert-agent marketing <span class="gold">studio</span> in a box.</h1>
+    <div class="sub">Strategy, copy, images, brand books, and motion-designed videos — gated by visual-judge QA.</div>
+    <div class="strip"><span>5 SKILLS</span><span>·</span><span>JUDGE GATE ≥ 9.0</span><span>·</span><span>POSTS + STORIES + REELS</span></div>
+  </div>
+  <div class="right">
+    <img class="emblem" src="showcase/mascot.png" alt="" />
+    <div class="lockup">MR. BOOKKEEPER</div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="bbrand"><span class="bm">MS</span> Marketing Studio</div>
+  <div class="burl">MRBOOKKEEPER.COM</div>
+</div>
+</body></html>
