@@ -2,7 +2,7 @@
 document.documentElement.classList.add("js");
 var mobileMenu = document.getElementById("mobileMenu");
 var menuBtn2 = document.getElementById("menuBtn");
-if (menuBtn2) {
+if (menuBtn2 && mobileMenu) {
   menuBtn2.addEventListener("click", function () {
     var open = document.body.classList.toggle("menu-open");
     menuBtn2.setAttribute("aria-expanded", open ? "true" : "false");

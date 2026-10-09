@@ -3,288 +3,186 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Marketing Studio — an expert-agent studio in a box</title>
-<meta name="description" content="Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents and gated by visual-judge QA. Packaged as 5 ZCode skills." />
-<meta name="theme-color" content="#0a1128" />
+<title>Marketing Studio — one sentence in, a judged campaign out</title>
+<meta name="description" content="Free, open-source skills for ZCode and Claude Code. Ask for a campaign; your agent makes the posts, stories, thumbnails, brand book and motion reel, and a visual judge only ships what scores 9.0/10 or higher." />
+<meta name="theme-color" content="#0a0a0a" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Marketing Studio" />
-<meta property="og:title" content="Marketing Studio — an expert-agent studio in a box" />
-<meta property="og:description" content="Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents and gated by visual-judge QA. Packaged as 5 ZCode skills." />
+<meta property="og:title" content="Marketing Studio — one sentence in, a judged campaign out" />
+<meta property="og:description" content="Free skills for ZCode and Claude Code: posts, stories, thumbnails, brand book and motion reels, each scored by a visual judge before it ships." />
 <meta property="og:url" content="https://marketing-studio-basharlouzons-projects.vercel.app/" />
 <meta property="og:image" content="https://marketing-studio-basharlouzons-projects.vercel.app/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Marketing Studio — an expert-agent studio in a box" />
-<meta name="twitter:description" content="Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents and gated by visual-judge QA. Packaged as 5 ZCode skills." />
-<meta name="twitter:image" content="showcase/kv-close-q3.png" />
+<meta name="twitter:title" content="Marketing Studio — one sentence in, a judged campaign out" />
+<meta name="twitter:description" content="Free skills for ZCode and Claude Code: posts, stories, thumbnails, brand book and motion reels, each scored by a visual judge before it ships." />
+<meta name="twitter:image" content="https://marketing-studio-basharlouzons-projects.vercel.app/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="img/kv-close-q3-480.webp" type="image/webp" />
+<link rel="stylesheet" href="home.css" />
 </head>
-<body class="landing">
+<body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="bg" aria-hidden="true"><div class="bg-glow"></div><div class="bg-grid"></div><div class="bg-noise"></div></div>
 
 <header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Marketing Studio home"><span class="mark" aria-hidden="true">MS</span><span>Marketing Studio</span></a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#skills">Skills</a>
-      <a href="#showcase">Showcase</a>
-      <a href="#pipeline">Pipeline</a>
-      <a href="docs/about.html">Docs</a>
-      <a class="btn btn-gold" href="#install">Get the skills</a>
-      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
-          <path d="M1 1h16M1 7h16M1 13h16" stroke="#f2f5fb" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </button>
+      <a class="hide-sm" href="#start">How to start</a>
+      <a class="hide-sm" href="#showcase">Examples</a>
+      <a class="hide-sm" href="docs/about.html">Docs</a>
+      <a class="hide-sm" href="https://github.com/Basharlouzon/marketing-studio" rel="noopener">GitHub</a>
+      <a class="btn btn-gold btn-sm" href="#install">Install</a>
     </nav>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#skills">Skills</a>
-      <a href="#showcase">Showcase</a>
-      <a href="#pipeline">Pipeline</a>
-      <a href="docs/about.html">Docs</a>
-      <a class="mm-cta" href="#install">Get the skills</a>
-    </div>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- hero -->
+  <!-- 1 · hero: what it is + the one action -->
   <section class="hero wrap">
-    <p class="chip">ZCode skills · agent-built · agent-audited</p>
-    <h1>An expert-agent marketing <span class="gold">studio</span> in a&nbsp;box.</h1>
-    <p class="sub">Strategy, copy, images, brand books, and motion-designed videos — produced by named AI agents
-    (Campaign Director, Content Writer, Video Director, Motion Designer…), rendered at pixel-exact sizes,
-    and gated by visual-judge QA on every single asset.</p>
-    <div class="hero-cta">
-      <a class="btn btn-gold btn-lg" href="#install">Get the skills</a>
-      <a class="btn btn-ghost btn-lg" href="docs/about.html">Read the docs</a>
+    <div class="hero-text">
+      <p class="eyebrow">Free · open source · for ZCode &amp; Claude Code</p>
+      <h1>One sentence in.<br /><span class="gold">A judged campaign out.</span></h1>
+      <p class="sub">Ask your AI agent for a campaign. It makes the posts, stories, thumbnails, brand book and motion reel, then a visual judge scores every asset and only ships what clears <b>9.0/10</b>.</p>
+
+      <div class="install" id="install">
+        <div class="tabs" role="tablist" aria-label="Choose your agent">
+          <button class="tab" role="tab" type="button" aria-selected="true" data-agent="zcode">ZCode</button>
+          <button class="tab" role="tab" type="button" aria-selected="false" data-agent="claude">Claude Code</button>
+        </div>
+        <div class="cmd">
+          <code class="cmd-text"><span class="pr" aria-hidden="true">$</span> <span data-cmd-text>git clone --depth 1 https://github.com/Basharlouzon/marketing-studio.git &amp;&amp; bash marketing-studio/install.sh</span></code>
+          <button class="copy" type="button" data-copy-cmd aria-label="Copy install command">Copy</button>
+        </div>
+        <p class="install-note">Paste into your terminal, then restart your agent. Needs <code>git</code> and <code>bash</code>; it only copies 5 skill folders.</p>
+      </div>
+      <a class="see-link" href="#showcase">See what one run makes ↓</a>
     </div>
+
+    <figure class="hero-out" aria-label="Real output from one campaign run">
+      <div class="stack">
+        <img class="s1" src="img/kv-close-q3-480.webp" srcset="img/kv-close-q3-480.webp 480w, img/kv-close-q3-960.webp 960w" sizes="(max-width: 760px) 44vw, 260px" width="1080" height="1350" alt="Key visual for a Q3 close campaign, made and judged by the studio" fetchpriority="high" />
+        <img class="s2" src="img/oct-10-halloween-480.webp" width="1080" height="1350" alt="Calendar-moment post for October 10" />
+        <img class="s3" src="img/yt-q3-480.webp" width="1280" height="720" alt="YouTube thumbnail for the Q3 close video" />
+        <span class="score">✓ 9.4/10 · ship</span>
+      </div>
+      <figcaption>Real output from one campaign run</figcaption>
+    </figure>
   </section>
 
-  <!-- signature moment: auto-typing campaign run -->
-  <section class="term-zone wrap" aria-label="Live campaign run simulation">
-    <div class="terminal reveal">
-      <div class="term-head">
-        <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
-        <span class="term-title">marketing-studio — zcode</span>
-      </div>
-      <div class="term-body" id="termBody" aria-live="off"></div>
-      <div class="term-badge" id="termBadge">✓ 9.4/10 · SHIP</div>
-    </div>
+  <!-- 2 · three steps to first result -->
+  <section id="start" class="section wrap">
+    <p class="eyebrow">How to start</p>
+    <h2>Your first campaign in 3 steps</h2>
+    <ol class="steps">
+      <li class="step">
+        <span class="n">1</span>
+        <h3>Install</h3>
+        <p>Paste this into your terminal, then quit and reopen your agent so it loads the skills.</p>
+        <div class="cmd cmd-sm">
+          <code class="cmd-text" data-cmd-text>git clone --depth 1 https://github.com/Basharlouzon/marketing-studio.git &amp;&amp; bash marketing-studio/install.sh</code>
+          <button class="copy" type="button" data-copy-cmd aria-label="Copy install command">Copy</button>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">2</span>
+        <h3>Add your brand</h3>
+        <p>Tell your agent where your product lives. It fills the brand-kit template with your real colors, logo and facts.</p>
+        <div class="cmd cmd-sm prompt">
+          <code class="cmd-text">Build a brand kit for my product from marketing-studio/templates/brand-kit-template. My site: https://…</code>
+          <button class="copy" type="button" data-copy="Build a brand kit for my product from marketing-studio/templates/brand-kit-template. My site: " aria-label="Copy brand kit prompt">Copy</button>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">3</span>
+        <h3>Ask for a campaign</h3>
+        <p>It asks 3–4 quick questions, checks current trends, builds the assets, and judges each one before you see it.</p>
+        <div class="cmd cmd-sm prompt">
+          <code class="cmd-text">Make 12 Instagram posts for my product for December.</code>
+          <button class="copy" type="button" data-copy="Make 12 Instagram posts for my product for December." aria-label="Copy campaign prompt">Copy</button>
+        </div>
+      </li>
+    </ol>
   </section>
 
-  <!-- metric strip -->
-  <section class="strip-zone wrap">
-    <div class="strip reveal">
-      <div class="strip-mono">
-        <span>5 skills · one studio</span>
-        <span>judge gate ≥ 9.0 / 10</span>
-        <span>output 1080×1350 · 1080×1920 · 1280×720</span>
-      </div>
-      <div class="strip-stats" data-stagger>
-        <div class="reveal"><b>80+</b><span>judged images shipped</span></div>
-        <div class="reveal"><b>18p</b><span>brand book generated</span></div>
-        <div class="reveal"><b>13</b><span>audit agents passed</span></div>
-        <div class="reveal"><b>9/10</b><span>final sign-off score</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- showcase bento -->
+  <!-- 3 · show the output -->
   <section id="showcase" class="section wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Showcase</p>
-      <h2>Real assets, shipped by the studio</h2>
-      <p class="lead">Every file below was generated, judged, and shipped by this pipeline — nothing stock, nothing mocked.</p>
-    </div>
-    <div class="bento" data-stagger>
-      <figure class="cell cell-hero reveal">
-        <img src="showcase/kv-close-q3.png" alt="Key visual for the Q3 close campaign, judged and shipped" loading="lazy" />
-        <figcaption>kv-close-q3.png · key visual · 1080×1350</figcaption>
-      </figure>
-      <figure class="cell cell-video reveal">
-        <video src="showcase/reel.mp4" autoplay muted loop playsinline aria-label="Motion-designed reel generated with remotion-motion-studio"></video>
-        <figcaption>reel.mp4 · motion · Remotion</figcaption>
-      </figure>
-      <figure class="cell cell-a reveal">
-        <img src="showcase/06-restaurant-fluent.png" alt="Trend-sourced social post concept" loading="lazy" />
-        <figcaption>06-restaurant · trend concept</figcaption>
-      </figure>
-      <figure class="cell cell-b reveal">
-        <img src="showcase/oct-10-halloween.png" alt="Calendar-moment post for October 10, Halloween season" loading="lazy" />
-        <figcaption>oct-10 · calendar moment</figcaption>
-      </figure>
-      <figure class="cell cell-c reveal">
-        <img src="showcase/yt-q3.png" alt="YouTube thumbnail for the Q3 close video" loading="lazy" />
-        <figcaption>yt-q3.png · 1280×720</figcaption>
-      </figure>
-      <figure class="cell cell-wide reveal">
-        <img src="showcase/brand-cover.png" alt="Cover of the generated 18-page brand book" loading="lazy" />
-        <figcaption>brand-cover.png · 18-page brand book</figcaption>
-      </figure>
-    </div>
-  </section>
+    <p class="eyebrow">Examples</p>
+    <h2>What one run makes</h2>
+    <p class="lead">From the October 2026 run for Mr.&nbsp;Bookkeeper, the brand kit bundled as the worked example. Every file was generated, judged and shipped by the studio.</p>
 
-  <!-- skills -->
-  <section id="skills" class="section wrap" style="padding-top: 24px;">
-    <div class="sec-head reveal">
-      <p class="eyebrow">The skills</p>
-      <h2>Five skills, one studio</h2>
-      <p class="lead">Each skill is a folder with a SKILL.md (loaded by ZCode), bundled scripts, and on-demand references. Docs are pre-rendered from the shipped files at build time — they can't drift.</p>
-    </div>
-    <div class="skills-grid" data-stagger>
-      <a class="skill-card reveal" href="docs/inspiration-intake.html">
-        <span class="skill-id">skill 0</span>
-        <h3>inspiration-intake</h3>
-        <p>Asks the user what he's looking for, then scans the internet for current trends — before any concept lock. Writes INTAKE.md + INSPIRATION.md.</p>
-        <span class="skill-go">read the docs →</span>
-      </a>
-      <a class="skill-card reveal" href="docs/mbk-brand-kit.html">
-        <span class="skill-id">skill 1</span>
-        <h3>brand-kit</h3>
-        <p>The brand truth: exact color tokens (oklch + hex), real product facts, voice + CTA conventions, layout laws. The one file you clone per product.</p>
-        <span class="skill-go">read the docs →</span>
-      </a>
-      <a class="skill-card reveal" href="docs/social-image-studio.html">
-        <span class="skill-id">skill 2</span>
-        <h3>social-image-studio</h3>
-        <p>The image factory: payload-driven generators → pixel-exact renders (posts, stories, thumbnails, PDF pages) → visual-judge QA. Bundled render + preverify scripts.</p>
-        <span class="skill-go">read the docs →</span>
-      </a>
-      <a class="skill-card reveal" href="docs/marketing-agent-studio.html">
-        <span class="skill-id">skill 3</span>
-        <h3>marketing-agent-studio</h3>
-        <p>The orchestration playbook: which expert agent to dispatch, in what order, with what brief. Copy-paste prompts included.</p>
-        <span class="skill-go">read the docs →</span>
-      </a>
-      <a class="skill-card reveal" href="docs/remotion-motion-studio.html">
-        <span class="skill-id">skill 4</span>
-        <h3>remotion-motion-studio</h3>
-        <p>Real motion videos — never static-slide zoompan. Motion Designer spec → Motion Animator implementation → render, in a Remotion project.</p>
-        <span class="skill-go">read the docs →</span>
-      </a>
-      <a class="skill-card reveal" href="docs/brand-kit-template.html">
-        <span class="skill-id">template</span>
-        <h3>brand-kit template</h3>
-        <p>Onboard ANY app or web app in 3 steps: copy the template, extract the app's colors and facts, scaffold. That's the whole port.</p>
-        <span class="skill-go">read the docs →</span>
-      </a>
-    </div>
-  </section>
+    <div class="run">
+      <div class="terminal" aria-label="Campaign run, simplified">
+        <div class="term-head"><span></span><span></span><span></span><b>campaign run</b></div>
+        <div class="term-body" id="termBody"></div>
+      </div>
 
-  <!-- pipeline -->
-  <section id="pipeline" class="pipeline">
-    <div class="wrap section">
-      <div class="sec-head reveal">
-        <p class="eyebrow">Pipeline</p>
-        <h2>How a campaign runs</h2>
-      </div>
-      <div class="flow" data-stagger>
-        <div class="step reveal"><span>1</span>Intake — ask the user + scan trends</div>
-        <div class="arrow" aria-hidden="true">→</div>
-        <div class="step reveal"><span>2</span>Concept lock on real calendar moments</div>
-        <div class="arrow" aria-hidden="true">→</div>
-        <div class="step reveal"><span>3</span>Agent waves — Director, Writer, Directors</div>
-        <div class="arrow" aria-hidden="true">→</div>
-        <div class="step reveal"><span>4</span>Build — images + motion videos</div>
-        <div class="arrow" aria-hidden="true">→</div>
-        <div class="step reveal"><span>5</span>Judge gate — fix loop — ship</div>
-      </div>
-      <p class="deepnote reveal">Every asset passes a stateless <b>visual-judge</b> pass with evidence-based verdicts. Failing assets are grouped by root cause, fixed once, re-rendered, and re-judged. The gate is the product.</p>
-    </div>
-  </section>
-
-  <!-- onboard -->
-  <section id="onboard" class="section wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Port it</p>
-      <h2>Onboard any app in 3 steps</h2>
-    </div>
-    <div class="grid-three" data-stagger>
-      <div class="onboard-card reveal">
-        <div class="num">1</div>
-        <h3>Copy the template</h3>
-        <p><code>cp -r templates/brand-kit-template skills/&lt;app&gt;-brand-kit/</code> and fill the placeholders — extract the app's exact colors from its CSS, its logo, its real facts.</p>
-      </div>
-      <div class="onboard-card reveal">
-        <div class="num">2</div>
-        <h3>Scaffold the workspace</h3>
-        <p><code>assets/</code> + <code>strategy/</code> + <code>images/</code> + one <code>gen_*.py</code> generator (clone patterns are in the brand kit).</p>
-      </div>
-      <div class="onboard-card reveal">
-        <div class="num">3</div>
-        <h3>Run the studio</h3>
-        <p>"Make 12 posts for {app} for December" — it asks what you're looking for, researches trends, builds, and judges.</p>
+      <div class="bento">
+        <figure class="cell c-kv">
+          <img src="img/kv-close-q3-480.webp" srcset="img/kv-close-q3-480.webp 480w, img/kv-close-q3-960.webp 960w" sizes="(max-width: 760px) 50vw, 300px" width="1080" height="1350" alt="Key visual, Q3 close" loading="lazy" decoding="async" />
+          <figcaption>Feed post · 1080×1350</figcaption>
+        </figure>
+        <figure class="cell c-reel">
+          <video data-src="showcase/reel.mp4" muted loop playsinline preload="none" aria-label="Motion reel made with remotion-motion-studio"></video>
+          <figcaption>Motion reel · 1080×1920</figcaption>
+        </figure>
+        <figure class="cell c-a">
+          <img src="img/oct-10-halloween-480.webp" srcset="img/oct-10-halloween-480.webp 480w, img/oct-10-halloween-960.webp 960w" sizes="(max-width: 760px) 50vw, 300px" width="1080" height="1350" alt="Calendar-moment post for October 10" loading="lazy" decoding="async" />
+          <figcaption>Calendar moment</figcaption>
+        </figure>
+        <figure class="cell c-book">
+          <img src="img/brand-cover-480.webp" srcset="img/brand-cover-480.webp 480w, img/brand-cover-960.webp 960w" sizes="(max-width: 760px) 50vw, 300px" width="1440" height="2036" alt="Cover of the generated 18-page brand book" loading="lazy" decoding="async" />
+          <figcaption>Brand book · 18 pages</figcaption>
+        </figure>
+        <figure class="cell c-yt">
+          <img src="img/yt-q3-480.webp" srcset="img/yt-q3-480.webp 480w, img/yt-q3-960.webp 960w" sizes="(max-width: 760px) 100vw, 480px" width="1280" height="720" alt="YouTube thumbnail, Q3 close" loading="lazy" decoding="async" />
+          <figcaption>YouTube thumbnail · 1280×720</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- install -->
-  <section id="install" class="install-zone wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Install</p>
-      <h2>Get the skills</h2>
+  <!-- 4 · how it works -->
+  <section id="skills" class="section wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Five skills, one line of production</h2>
+    <p class="lead">Each skill is a folder with a <code>SKILL.md</code> your agent loads, plus bundled scripts. The docs are rebuilt from those files on every deploy, so they match the code.</p>
+    <ol class="flow">
+      <li><a href="docs/inspiration-intake.html"><span class="k">0</span><b>Intake</b><span class="d">Asks what you want, scans current trends.</span><code>inspiration-intake</code></a></li>
+      <li><a href="docs/mbk-brand-kit.html"><span class="k">1</span><b>Brand</b><span class="d">Exact colors, real facts, voice, layout rules.</span><code>brand-kit</code></a></li>
+      <li><a href="docs/social-image-studio.html"><span class="k">2</span><b>Images</b><span class="d">Posts, stories, thumbnails at exact sizes.</span><code>social-image-studio</code></a></li>
+      <li><a href="docs/remotion-motion-studio.html"><span class="k">3</span><b>Motion</b><span class="d">Real animated reels, rendered in Remotion.</span><code>remotion-motion-studio</code></a></li>
+      <li><a href="docs/marketing-agent-studio.html"><span class="k">4</span><b>Judge &amp; ship</b><span class="d">Expert agents run it; a visual judge gates every asset.</span><code>marketing-agent-studio</code></a></li>
+    </ol>
+    <div class="gate">
+      <p class="gate-k">The judge gate</p>
+      <p>Every asset gets a pass or fail with evidence: cut-off text, dead space, broken images, weak contrast. Fails are grouped by root cause, fixed once, re-rendered and judged again. Nothing under <b>9.0/10</b> reaches you.</p>
     </div>
-    <div class="install-box reveal">
-      <div class="install-cmd">
-        <code id="installCmd"><span class="t-p">$</span> git clone https://github.com/Basharlouzon/marketing-studio.git &amp;&amp; cd marketing-studio &amp;&amp; ./install.sh</code>
-        <button class="copy-btn" type="button" data-copy="git clone https://github.com/Basharlouzon/marketing-studio.git && cd marketing-studio && ./install.sh">copy</button>
-      </div>
-      <p class="install-note"><code>install.sh</code> is idempotent and safe to re-run — it copies the 5 skills into <code>~/.zcode/skills/</code>. Restart ZCode — done.</p>
+  </section>
+
+  <!-- 5 · final CTA -->
+  <section class="section wrap final">
+    <h2>Install once. Ask for a campaign.</h2>
+    <div class="cmd">
+      <code class="cmd-text"><span class="pr" aria-hidden="true">$</span> <span data-cmd-text>git clone --depth 1 https://github.com/Basharlouzon/marketing-studio.git &amp;&amp; bash marketing-studio/install.sh</span></code>
+      <button class="copy" type="button" data-copy-cmd aria-label="Copy install command">Copy</button>
     </div>
+    <p class="install-note">Using Claude Code? Pick it in the tabs at the top, or add <code>SKILLS_DIR=~/.claude/skills</code> before <code>bash marketing-studio/install.sh</code>.</p>
+    <p class="final-links"><a href="docs/about.html">Read the docs →</a><a href="https://github.com/Basharlouzon/marketing-studio" rel="noopener">View on GitHub →</a></p>
   </section>
 
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html"><span class="mark" aria-hidden="true">MS</span> Marketing Studio</a>
-        <p>An expert-agent marketing studio, packaged as ZCode skills. Built and audited by AI agents.</p>
-        <span class="ver-badge">v1.0</span>
-      </div>
-      <div class="footer-col">
-        <h4>Skills</h4>
-        <ul>
-          <li><a href="docs/inspiration-intake.html">inspiration-intake</a></li>
-          <li><a href="docs/mbk-brand-kit.html">brand-kit</a></li>
-          <li><a href="docs/social-image-studio.html">social-image-studio</a></li>
-          <li><a href="docs/marketing-agent-studio.html">marketing-agent-studio</a></li>
-          <li><a href="docs/remotion-motion-studio.html">remotion-motion-studio</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Docs</h4>
-        <ul>
-          <li><a href="docs/about.html">About</a></li>
-          <li><a href="docs/role-prompts.html">Agent role prompts</a></li>
-          <li><a href="docs/brand-kit-template.html">Brand-kit template</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="#showcase">Showcase</a></li>
-          <li><a href="#install">Install</a></li>
-          <li><a href="https://github.com/Basharlouzon/marketing-studio">GitHub</a></li>
-          <li><a href="https://mrbookkeeper.com">mrbookkeeper.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Marketing Studio · built and audited by AI agents</span>
-      <span class="eyebrow" style="font-size: 11.5px;">the gate is the product</span>
-    </div>
+  <div class="wrap foot-in">
+    <span>Marketing Studio · MIT license · built by <a href="https://github.com/Basharlouzon" rel="noopener">Bashar Louzon</a></span>
+    <span class="foot-links"><a href="docs/about.html">Docs</a><a href="docs/role-prompts.html">Agent prompts</a><a href="docs/brand-kit-template.html">Brand-kit template</a><a href="https://github.com/Basharlouzon/marketing-studio" rel="noopener">GitHub</a></span>
   </div>
-  <div class="watermark" aria-hidden="true">MARKETING STUDIO</div>
 </footer>
 
-<script src="app.js"></script>
+<script src="home.js" defer></script>
 </body>
 </html>
