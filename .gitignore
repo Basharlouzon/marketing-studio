@@ -1,2 +1,3 @@
-/Users/basharlouzon/Desktop/dev/jackob/marketing-studio/.gitignore
 .pybuild/
+__pycache__/
+docs-site/img/
