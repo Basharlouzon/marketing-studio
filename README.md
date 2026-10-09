@@ -32,14 +32,25 @@ Everything above the fold of that GIF was produced by this repo: the terminal ru
 
 ## Install
 
+One command. It clones the repo and copies the 5 skills into your agent:
+
 ```bash
-git clone https://github.com/Basharlouzon/marketing-studio.git
-cd marketing-studio
-./install.sh        # copies 5 skills into ~/.zcode/skills/
-# restart your agent — done.
+# ZCode
+git clone --depth 1 https://github.com/Basharlouzon/marketing-studio.git && bash marketing-studio/install.sh
+
+# Claude Code
+git clone --depth 1 https://github.com/Basharlouzon/marketing-studio.git && SKILLS_DIR=~/.claude/skills bash marketing-studio/install.sh
 ```
 
-Works with **Claude Code**, **ZCode**, and any agent that loads `SKILL.md` skills.
+Then restart your agent. `install.sh` creates the skills folder if it doesn't exist, can run from any directory, and is safe to re-run. Set `SKILLS_DIR` to install anywhere else.
+
+## Your first campaign in 3 steps
+
+1. **Install** with the command above, then restart your agent.
+2. **Add your brand:** "Build a brand kit for my product from marketing-studio/templates/brand-kit-template. My site: https://…" (it fills in your real colors, logo and facts).
+3. **Ask for a campaign:** "Make 12 Instagram posts for my product for December." It asks 3–4 questions, checks current trends, builds, and judges every asset.
+
+The bundled `mbk-brand-kit` (Mr. Bookkeeper) is the worked example behind every showcase asset.
 
 ## The five skills
 

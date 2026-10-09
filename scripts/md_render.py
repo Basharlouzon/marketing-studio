@@ -63,7 +63,12 @@ CLONE_CMD = f"git clone {REPO}.git"
 
 
 def rewrite_placeholders(text: str) -> str:
-    return text.replace("git clone <this-repo>", CLONE_CMD)
+    text = text.replace("git clone <this-repo>", CLONE_CMD)
+    # README image paths are repo-relative; docs pages live in docs-site/docs/
+    text = text.replace('src="docs-site/showcase/', 'src="../showcase/')
+    text = text.replace('src="demo.gif"', f'src="{REPO}/raw/main/demo.gif"')
+    text = text.replace('<div align="center">', '<div align="center" markdown="1">')
+    return text
 
 
 def escape_stray_lt(text: str) -> str:
@@ -101,7 +106,7 @@ def render_markdown(text: str) -> str:
     text = escape_stray_lt(text)
     return markdown.markdown(
         text,
-        extensions=["fenced_code", "tables", "sane_lists", "toc"],
+        extensions=["fenced_code", "tables", "sane_lists", "toc", "md_in_html"],
         extension_configs={"toc": {"toc_depth": "2-3"}},
     )
 
@@ -176,7 +181,7 @@ PAGE_TMPL = """<!doctype html>
 <meta name="twitter:description" content="{description}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="docs-body">
