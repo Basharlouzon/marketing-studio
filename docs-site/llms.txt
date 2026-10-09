@@ -17,5 +17,5 @@ Works for any product: the studio machinery is generic; each product gets one fi
 
 ## Optional
 
-- [Install](https://marketing-studio-basharlouzons-projects.vercel.app/docs/about.html): `git clone` the repo, run `./install.sh`, restart ZCode
+- [Install](https://marketing-studio-basharlouzons-projects.vercel.app/docs/about.html): `git clone --depth 1 https://github.com/Basharlouzon/marketing-studio.git && bash marketing-studio/install.sh` (Claude Code: prefix install with `SKILLS_DIR=~/.claude/skills`), then restart the agent
 - Source: https://github.com/Basharlouzon/marketing-studio
