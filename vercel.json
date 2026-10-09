@@ -1,5 +1,5 @@
 {
-  "buildCommand": "./build-docs.sh",
+  "buildCommand": "bash build-docs.sh",
   "outputDirectory": "docs-site",
   "cleanUrls": true
 }

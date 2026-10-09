@@ -19,7 +19,7 @@ jobs:
         run: pip install markdown pillow
 
       - name: Build docs (pre-render SKILL.md files)
-        run: ./build-docs.sh
+        run: bash build-docs.sh
 
       - name: All 8 doc pages rendered
         run: |
@@ -34,6 +34,18 @@ jobs:
 
       - name: Preverify showcase images (dimensions / dead bands)
         run: python3 skills/social-image-studio/scripts/preverify.py docs-site/showcase
+
+      - name: install.sh works on a fresh machine (ZCode + custom dir) and re-runs
+        run: |
+          export HOME="$(mktemp -d)"
+          bash install.sh
+          bash install.sh
+          test -f "$HOME/.zcode/skills/social-image-studio/SKILL.md"
+          SKILLS_DIR="$HOME/.claude/skills" bash install.sh
+          test "$(ls "$HOME/.claude/skills" | wc -l)" -eq 5
+
+      - name: Landing images were optimized
+        run: test -f docs-site/img/kv-close-q3-480.webp
 
       - name: Syntax-check bundled scripts
         run: |

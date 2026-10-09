@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Marketing Studio — idempotent installer. Copies the 5 skills into your agent's skills folder.
-#   ZCode (default):  ./install.sh
-#   Claude Code:      SKILLS_DIR=~/.claude/skills ./install.sh
+#   ZCode (default):  bash install.sh
+#   Claude Code:      SKILLS_DIR=~/.claude/skills bash install.sh
 # Safe to run from any directory and to re-run (it replaces only these 5 skill folders).
 set -euo pipefail
 DEST="${SKILLS_DIR:-${HOME}/.zcode/skills}"
